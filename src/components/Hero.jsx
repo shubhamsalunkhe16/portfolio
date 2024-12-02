@@ -3,6 +3,16 @@ import CodeSnippet from "./CodeSnippet";
 import Button from "./Button";
 
 const Hero = () => {
+  const DownloadCV = () => {
+    const pdfUrl = "/shubham_resume.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "shubham_resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="flex justify-between items-center gap-16 max-[950px]:gap-10 flex-wrap flex-col min-[950px]:flex-row">
       <div className="flex-1 text-text-primary flex flex-col gap-2 justify-center items-center min-[950px]:items-start">
@@ -18,7 +28,9 @@ const Hero = () => {
           building AI-driven content platforms, contributing to music streaming
           services, and leading teams in high-impact projects.
         </p>
-        <Button className="mt-2">Download CV</Button>
+        <Button className="mt-2" onClick={DownloadCV}>
+          Download CV
+        </Button>
       </div>
       <div className="flex-[1.25] overflow-x-auto w-full">
         <CodeSnippet />

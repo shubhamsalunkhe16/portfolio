@@ -49,7 +49,7 @@ const GetInTouch = () => {
               <dt class="text-lg leading-6 font-medium text-text-primary">
                 Email
               </dt>
-              <dd class="mt-1 text-base text-text-secondary">
+              <dd class="text-base text-text-secondary">
                 <a href="mailto:salunkheshubham0@gmail.com">
                   salunkheshubham0@gmail.com
                 </a>
@@ -80,7 +80,7 @@ const GetInTouch = () => {
               <dt class="text-lg leading-6 font-medium text-text-primary">
                 Phone number
               </dt>
-              <dd class="mt-2 text-base text-text-secondary">
+              <dd class="text-base text-text-secondary">
                 <a href="tel:+919004409190">9004409190</a>
               </dd>
             </div>
@@ -109,7 +109,7 @@ const GetInTouch = () => {
               <dt class="text-lg leading-6 font-medium text-text-primary">
                 Address
               </dt>
-              <dd class="mt-2 text-base text-text-secondary">
+              <dd class="text-base text-text-secondary">
                 Charop, Kandiwali (w.),
                 <br />
                 Mumbai-67
