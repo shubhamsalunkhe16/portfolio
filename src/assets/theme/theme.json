@@ -1,16 +1,16 @@
 {
   "light": {
     "--bg-primary": "#fff",
-    "--bg-card": "#DED4E8 ",
+    "--bg-card": "#e7e7e7 ",
     "--text-primary": "#000000",
-    "--text-secondary": "#6b7280",
-    "--primary": "#f2386a"
+    "--text-secondary": "##53555b",
+    "--primary": "#2995ff"
   },
   "dark": {
     "--bg-primary": "#000000",
     "--bg-card": "#1e1e1e",
     "--text-primary": "#ffffff",
-    "--text-secondary": "#6b7280",
+    "--text-secondary": "#a6aab3",
     "--primary": "#AAFF00"
   }
 }

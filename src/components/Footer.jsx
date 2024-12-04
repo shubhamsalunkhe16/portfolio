@@ -1,46 +1,38 @@
 import React from "react";
 import { Linkedin, Github, Instagram } from "lucide-react";
-
-const SocialLinks = {
-  linkedin: "https://www.linkedin.com/in/shubhamsalunkhe16/",
-  github: "https://github.com/shubhamsalunkhe16",
-  instagram:
-    "https://www.instagram.com/salunkheshubham16?igsh=dnJzaG9kaHFsZjRn",
-};
+import userMeta from "../constants/userMeta";
+import openLink from "../utils/openLink";
 
 const Footer = () => {
-  const openLink = (link) => {
-    window.open(link, "_blank");
-  };
+  const { socialLinks } = userMeta;
   return (
-    <div class="text-center border-t-2 border-text-secondary pt-6">
+    <div className="text-center border-t-2 border-text-secondary pt-6 bg-bg-card">
       <a
         href="#"
-        class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900"
+        className="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900"
       >
         <h1 className="heading-3xl highlight flex gap-2 items-center">
           &lt;shubh/&gt;
         </h1>
       </a>
 
-      <span class="block text-sm text-center text-text-secondary">
-        © 2024-2025 Shubh. All Rights Reserved. Built with&nbsp;
-        <a href="https://react.dev/" class="text-primary">
+      <span className="block text-sm text-center text-text-secondary">
+        © All Rights Reserved. Built with&nbsp;
+        <a href="https://react.dev/" className="text-primary">
           React
         </a>
         &nbsp;and&nbsp;
-        <a href="https://tailwindcss.com" class="text-primary">
+        <a href="https://tailwindcss.com" className="text-primary">
           Tailwind CSS
         </a>
         .
       </span>
 
-      <ul class="flex justify-center mt-5 space-x-5">
+      <ul className="flex justify-center mt-5 space-x-5">
         <li>
           <button
-            href="#"
-            class="text-text-secondary hover:text-primary"
-            onClick={() => openLink(SocialLinks.linkedin)}
+            className="text-text-secondary hover:text-primary"
+            onClick={() => openLink(socialLinks.linkedin)}
           >
             <Linkedin />
           </button>
@@ -48,8 +40,8 @@ const Footer = () => {
         <li>
           <button
             href="#"
-            class="text-text-secondary hover:text-primary"
-            onClick={() => openLink(SocialLinks.github)}
+            className="text-text-secondary hover:text-primary"
+            onClick={() => openLink(socialLinks.github)}
           >
             <Github />
           </button>
@@ -57,8 +49,8 @@ const Footer = () => {
         <li>
           <button
             href="#"
-            class="text-text-secondary hover:text-primary"
-            onClick={() => openLink(SocialLinks.instagram)}
+            className="text-text-secondary hover:text-primary"
+            onClick={() => openLink(socialLinks.instagram)}
           >
             <Instagram />
           </button>

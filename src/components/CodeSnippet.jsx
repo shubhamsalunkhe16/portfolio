@@ -17,7 +17,7 @@ const CodeSnippet = () => {
 const App = () => {
   const userMeta = {
     fullName: "Shubham Bhagwan Salunkhe",
-    title: "Full Stack Developer",
+    designation: "Frontend Developer",
     experienceYears: ${calculateYearsFrom("2021-09-13")},
     isEngineer: true,
     salary: undefined,

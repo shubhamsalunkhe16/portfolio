@@ -1,28 +1,25 @@
-import React, { lazy, Suspense } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import navConstants from "./constants/navStrings";
+import React, { lazy, Suspense, useEffect } from "react";
 import Fallback from "./components/Fallback";
 import { ThemeProvider } from "./context/ThemeContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
-const ResourcesPage = lazy(() => import("./pages/ResourcesPage"));
-
-const router = createBrowserRouter([
-  {
-    path: navConstants.HOME,
-    element: <HomePage />,
-  },
-  {
-    path: navConstants.RESOURCES,
-    element: <ResourcesPage />,
-  },
-]);
 
 export default function App() {
+  useEffect(() => {
+    AOS.init({
+      offset: 80,
+      duration: 600,
+      easing: "linear",
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <Suspense fallback={<Fallback />}>
       <ThemeProvider>
-        <RouterProvider router={router} />
+        <HomePage />
       </ThemeProvider>
     </Suspense>
   );

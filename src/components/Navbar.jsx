@@ -1,41 +1,47 @@
 import React, { useState } from "react";
 import navConstants from "../constants/navStrings";
-import { NavLink, useNavigate } from "react-router-dom";
 import { ReactComponent as MenuBar } from "../assets/icons/menu-bar.svg";
 import { ReactComponent as Close } from "../assets/icons/close.svg";
 import ThemeBtn from "./ThemeBtn";
+import { Link } from "react-scroll";
 
 const navlinks = navConstants.NAVLINKS;
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const navigate = useNavigate();
 
-  const navigateToHome = () => navigate(navConstants.HOME);
+  const homeNav = [
+    { label: "Home", to: "home_section", offset: -90 },
+    { label: "About", to: "my_story", offset: -60 },
+    { label: "Experience", to: "experience", offset: -40 },
+    { label: "Projects", to: "projects", offset: -40 },
+    { label: "Contact", to: "contact", offset: 0 },
+  ];
 
   return (
     <nav className="flex gap-6 justify-between items-center px-7 py-5 bg-bg-card text-text-primary fixed top-0 w-screen z-50 shadow-sm">
       <div className="z-50 cursor-pointer">
-        <h1
+        <Link
           className="heading-3xl highlight flex gap-2 items-center"
-          onClick={navigateToHome}
+          to="home_section"
         >
           &lt;shubh/&gt;
-        </h1>
+        </Link>
       </div>
       <div className="hidden lg:flex justify-between items-center gap-12">
-        {navlinks?.map(({ label, path }) => (
-          <NavLink
-            key={path}
-            to={path}
-            className={({ isActive }) =>
-              `para-md ${
-                isActive ? "active-route highlight" : "text-text-primary"
-              } relative after:bg-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`
-            }
+        {homeNav?.map(({ label, to, offset }) => (
+          <Link
+            key={label}
+            to={to}
+            // activeClass="after:w-full"
+            spy={true}
+            smooth={true}
+            offset={offset}
+            duration={300}
+            className="para-md relative after:bg-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
           >
             {label}
-          </NavLink>
+          </Link>
         ))}
         <ThemeBtn />
       </div>
@@ -58,10 +64,15 @@ const Navbar = () => {
       >
         <div className="px-8 py-16 pt-24">
           <div className="flex flex-col items-center gap-8 font-bold tracking-wider">
-            {navlinks?.map(({ label, path }) => (
-              <NavLink
-                key={path}
-                to={path}
+            {homeNav?.map(({ label, to, offset }) => (
+              <Link
+                key={label}
+                to={to}
+                // activeClass="after:w-full"
+                spy={true}
+                smooth={true}
+                offset={offset}
+                duration={300}
                 className={({ isActive }) =>
                   `para-md ${
                     isActive ? "active-route highlight" : "text-text-primary"
@@ -69,7 +80,7 @@ const Navbar = () => {
                 }
               >
                 {label}
-              </NavLink>
+              </Link>
             ))}
           </div>
         </div>

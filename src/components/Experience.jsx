@@ -1,217 +1,93 @@
+import userMeta from "../constants/userMeta";
+import Button from "./Button";
+import Chip from "./Chip";
+import SectionHeader from "./SectionHeader";
+
 const Experience = () => {
+  const { experiences } = userMeta;
+  const openLink = (link) => {
+    window.open(link, "_blank");
+  };
+
   return (
-    // <section className="mt-6">
-    //   <h3 className="text-2xl font-semibold">Experience</h3>
-    //   <div className="mt-4">
-    //     <h4 className="font-bold">
-    //       Senior Frontend Developer at GoPhygital Private Limited
-    //     </h4>
-    //     <p>Sept 2021 - Present</p>
-    //     <ul className="list-disc list-inside mt-2">
-    //       <li>
-    //         Designed and developed an AI-driven content creation platform for
-    //         top-tier clients.
-    //       </li>
-    //       <li>Implemented advanced text-to-speech functionality.</li>
-    //       <li>
-    //         Built AI-enhanced music tools and a web-based music streaming
-    //         platform.
-    //       </li>
-    //       <li>Mentored teams and managed multiple high-impact projects.</li>
-    //     </ul>
-    //   </div>
-    // </section>
-    <>
-      <div className="max-w-xl mx-auto p-8">
-        <div className="flow-root">
-          <ul className="-mb-8">
-            <li>
-              <div className="relative pb-8">
-                <span
-                  className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
-                  aria-hidden="true"
-                ></span>
-                <div className="relative flex items-start space-x-3">
-                  <div>
-                    <div className="relative px-1">
-                      <div className="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
-                        <svg
-                          className="text-text-primary h-5 w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                          />
-                        </svg>
+    <section
+      section
+      id="experience"
+      className="overflow-hidden py-8"
+      data-aos="fade-up"
+    >
+      <SectionHeader title={"EXPERIENCE"} borderTop />
+      <div className="mx-auto w-full">
+        {experiences?.map(
+          ({
+            title,
+            subtitle,
+            description,
+            link,
+            githubLink,
+            image,
+            tools,
+          }) => (
+            <div
+              data-aos="fade-up"
+              className="mx-auto grid w-full grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-1"
+            >
+              <div className="pt-4">
+                <div className="w-full">
+                  <h2 className="mt-2 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+                    {title}
+                  </h2>
+                  <p className="text-base font-semibold leading-7 text-primary mt-2">
+                    {subtitle}
+                  </p>
+                  <dl className="mt-5 w-full space-y-3 text-sm md:text-base leading-7 text-text-secondary lg:max-w-none">
+                    {description?.map((desc) => (
+                      <div className="relative pl-9">
+                        <dt className="inline font-semibold text-gray-900">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true"
+                            className="absolute left-1 top-1 h-5 w-5 text-primary"
+                          >
+                            <path d="M3.196 12.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 12.87z"></path>
+                            <path d="M3.196 8.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 8.87z"></path>
+                            <path d="M10.38 1.103a.75.75 0 00-.76 0l-7.25 4.25a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.76 0l7.25-4.25a.75.75 0 000-1.294l-7.25-4.25z"></path>
+                          </svg>
+                        </dt>
+                        <dd className="inline">{desc}</dd>
                       </div>
-                    </div>
-                  </div>
-                  <div className="min-w-0 flex-1 py-0">
-                    <div className="text-md text-gray-500">
-                      <div>
-                        <a href="#" className="font-medium text-gray-900 mr-2">
-                          v3.2.0
-                        </a>
-
-                        <a
-                          href="#"
-                          className="my-0.5 relative inline-flex items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm"
-                        >
-                          <div className="absolute flex-shrink-0 flex items-center justify-center">
-                            <span
-                              className="h-1.5 w-1.5 rounded-full bg-green-500"
-                              aria-hidden="true"
-                            ></span>
-                          </div>
-                          <div className="ml-3.5 font-medium text-gray-900">
-                            Feature
-                          </div>
-                        </a>
-                      </div>
-                      <span className="whitespace-nowrap text-sm">10h ago</span>
-                    </div>
-                    <div className="mt-2 text-gray-700">
-                      <p>
-                        - Added a user profile page for personalized settings.
-                        <br />
-                        - Implemented a dark mode for improved user experience
-                        at night.
-                        <br />- Introduced real-time notifications for instant
-                        updates.
-                      </p>
-                    </div>
-                  </div>
+                    ))}
+                  </dl>
+                </div>
+                <div className="mt-5 flex gap-3 items-center flex-wrap">
+                  <span className="text-base font-bold">Tools :</span>
+                  {tools?.map((tool) => (
+                    <Chip title={tool} key={tool} />
+                  ))}
+                </div>
+                <div className="mt-5 flex items-center gap-3 flex-col min-[450px]:flex-row min-[450px]:gap-6">
+                  {!!githubLink && (
+                    <Button onClick={() => openLink(githubLink)}>
+                      View Source Code
+                    </Button>
+                  )}
+                  <Button onClick={() => openLink(link)}>Live Demo</Button>
                 </div>
               </div>
-            </li>
-            <li>
-              <div className="relative pb-8">
-                <span
-                  className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
-                  aria-hidden="true"
-                ></span>
-                <div className="relative flex items-start space-x-3">
-                  <div>
-                    <div className="relative px-1">
-                      <div className="h-8 w-8 bg-primary rounded-full ring-8 ring-text-primary flex items-center justify-center">
-                        <svg
-                          className="text-text-primary h-5 w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="min-w-0 flex-1 py-0">
-                    <div className="text-md text-gray-500">
-                      <div>
-                        <span className="font-medium heading-xl text-text-primary mr-2">
-                          v3.1.0
-                        </span>
-                      </div>
-                      <span className="whitespace-nowrap text-text-secondary text-sm">
-                        9h ago
-                      </span>
-                    </div>
-                    <div className="mt-2 text-text-secondary">
-                      <p>
-                        - Improved performance by optimizing database queries.
-                        <br />
-                        - Enhanced security measures to protect user data.
-                        <br />- Streamlined the user interface for a more
-                        intuitive experience.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div className="relative pb-8">
-                <span
-                  className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
-                  aria-hidden="true"
-                ></span>
-                <div className="relative flex items-start space-x-3">
-                  <div>
-                    <div className="relative px-1">
-                      <div className="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
-                        <svg
-                          className="text-text-primary h-5 w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="min-w-0 flex-1 py-0">
-                    <div className="text-md text-gray-500">
-                      <div>
-                        <a href="#" className="font-medium text-gray-900 mr-2">
-                          v3.0.10
-                        </a>
-
-                        <a
-                          href="#"
-                          className="my-0.5 relative inline-flex items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm"
-                        >
-                          <div className="absolute flex-shrink-0 flex items-center justify-center">
-                            <span
-                              className="h-1.5 w-1.5 rounded-full bg-red-500"
-                              aria-hidden="true"
-                            ></span>
-                          </div>
-                          <div className="ml-3.5 font-medium text-gray-900">
-                            Bug
-                          </div>
-                        </a>
-                      </div>
-                      <span className="whitespace-nowrap text-sm">6h ago</span>
-                    </div>
-                    <div className="mt-2 text-gray-700">
-                      <p>
-                        - Resolved a critical issue causing crashes on certain
-                        devices.
-                        <br />
-                        - Fixed a login error that prevented some users from
-                        accessing their accounts.
-                        <br />- Addressed a display glitch causing text overflow
-                        in long messages.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+              <img
+                src={image}
+                alt="Product screenshot"
+                className="w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 "
+                width="2432"
+                height="1442"
+              />
+            </div>
+          )
+        )}
       </div>
-    </>
+    </section>
   );
 };
 

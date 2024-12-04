@@ -4,7 +4,7 @@ const navConstants = {
   get NAVLINKS() {
     return [
       { label: "Home", path: this.HOME },
-      // { label: "Resources", path: this.RESOURCES },
+      { label: "Resources", path: this.RESOURCES },
     ];
   },
 };
