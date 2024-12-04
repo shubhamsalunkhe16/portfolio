@@ -7,7 +7,7 @@ import SectionHeader from "./SectionHeader";
 const Contact = () => {
   const { socialLinks } = userMeta;
   return (
-    <div className="w-full mx-auto px-4" id="contact" data-aos="fade-up">
+    <section className="w-full mx-auto px-4" id="contact" data-aos="fade-up">
       <div className="lg:text-center">
         <SectionHeader title={"LET'S CONNECT"} borderTop />
       </div>
@@ -87,7 +87,7 @@ const Contact = () => {
           </div>
         </dl>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,6 +3,16 @@ import Button from "./Button";
 import Chip from "./Chip";
 import SectionHeader from "./SectionHeader";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
+// import required modules
+import { Navigation } from "swiper/modules";
+
 const Experience = () => {
   const { experiences } = userMeta;
   const openLink = (link) => {
@@ -19,16 +29,9 @@ const Experience = () => {
       <SectionHeader title={"EXPERIENCE"} borderTop />
       <div className="mx-auto w-full">
         {experiences?.map(
-          ({
-            title,
-            subtitle,
-            description,
-            link,
-            githubLink,
-            image,
-            tools,
-          }) => (
+          ({ title, subtitle, description, imageArr, tools }) => (
             <div
+              key={title}
               data-aos="fade-up"
               className="mx-auto grid w-full grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-1"
             >
@@ -42,7 +45,7 @@ const Experience = () => {
                   </p>
                   <dl className="mt-5 w-full space-y-3 text-sm md:text-base leading-7 text-text-secondary lg:max-w-none">
                     {description?.map((desc) => (
-                      <div className="relative pl-9">
+                      <div className="relative pl-9" key={desc}>
                         <dt className="inline font-semibold text-gray-900">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -67,22 +70,20 @@ const Experience = () => {
                     <Chip title={tool} key={tool} />
                   ))}
                 </div>
-                <div className="mt-5 flex items-center gap-3 flex-col min-[450px]:flex-row min-[450px]:gap-6">
-                  {!!githubLink && (
-                    <Button onClick={() => openLink(githubLink)}>
-                      View Source Code
-                    </Button>
-                  )}
-                  <Button onClick={() => openLink(link)}>Live Demo</Button>
-                </div>
               </div>
-              <img
-                src={image}
-                alt="Product screenshot"
-                className="w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 "
-                width="2432"
-                height="1442"
-              />
+              <div className="w-[calc(100%-100px)] min-w-64 overflow-y-auto mx-auto">
+                <Swiper navigation={true} modules={[Navigation]}>
+                  {imageArr?.map((image) => (
+                    <SwiperSlide>
+                      <img
+                        src={image}
+                        alt="Product screenshot"
+                        className="rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 object-cover"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
             </div>
           )
         )}

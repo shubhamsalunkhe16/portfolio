@@ -6,9 +6,12 @@ const userMeta = {
     {
       title: "Senior Frontend Developer",
       subtitle: "GoPhygital Private Limited",
-      image: "images/creation-station.png",
-      link: "",
-      githubLink: "",
+      imageArr: [
+        "images/creation-station.png",
+        "images/sonic_space_browse_page.png",
+        "images/sonic_space_similar_search.png",
+        // "images/sonic_space_track_detail.png",
+      ],
       description: [
         "Architected a cutting-edge AI-driven content generation system for leading global brands like Mastercard, Mercedes Benz, Vodafone, Shell and many more; resulted in enhanced creative workflow efficiencies measured at 15% during initial user feedback sessions.",
         "Implemented advanced text-to-speech functionality with 1800+ voice profiles, offensive content detection, and timeline-based voice placement.",
@@ -82,9 +85,12 @@ const userMeta = {
       ],
     },
   ],
-  skills: [
+  skillMeta: [
     {
-      Frontend: [
+      title: "Frontend",
+      description:
+        "Frontend is the user-facing part of a website, built for design and interactivity.",
+      skills: [
         "HTML",
         "CSS",
         "Sass",
@@ -96,24 +102,18 @@ const userMeta = {
         "Redux",
         "Next.js",
       ],
-      Backend: ["Node.js (Express)", "Java (Spring Boot)", "Python"],
-      Databases: ["MySQL", "MongoDB", "Firebase"],
-      "Frameworks & Tools": [
-        "React Native",
-        "Git",
-        "FFmpeg",
-        "Algolia",
-        "OpenAI",
-        "Tuney's AI",
-      ],
-      "Other Skills": [
-        "Leadership",
-        "Scalable architecture design",
-        "AI Integration",
-        "API integration",
-        "Agile methodology",
-        "Responsive design",
-      ],
+    },
+    {
+      title: "Backend",
+      description:
+        "Backend is the server-side part of a website or app, managing data, logic, and APIs.",
+      skills: ["Node.js", "Java", "Python"],
+    },
+    {
+      title: "Databases",
+      description:
+        "A database is a structured system for storing, managing, and retrieving data.",
+      skills: ["MySQL", "MongoDB", "Firebase"],
     },
   ],
   socialLinks: {

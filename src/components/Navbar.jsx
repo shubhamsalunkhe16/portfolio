@@ -13,6 +13,7 @@ const Navbar = () => {
   const homeNav = [
     { label: "Home", to: "home_section", offset: -90 },
     { label: "About", to: "my_story", offset: -60 },
+    { label: "Skills", to: "skills", offset: -40 },
     { label: "Experience", to: "experience", offset: -40 },
     { label: "Projects", to: "projects", offset: -40 },
     { label: "Contact", to: "contact", offset: 0 },
@@ -23,7 +24,11 @@ const Navbar = () => {
       <div className="z-50 cursor-pointer">
         <Link
           className="heading-3xl highlight flex gap-2 items-center"
-          to="home_section"
+          to={homeNav[0].to}
+          offset={homeNav[0].offset}
+          spy={true}
+          smooth={true}
+          duration={300}
         >
           &lt;shubh/&gt;
         </Link>
@@ -73,11 +78,7 @@ const Navbar = () => {
                 smooth={true}
                 offset={offset}
                 duration={300}
-                className={({ isActive }) =>
-                  `para-md ${
-                    isActive ? "active-route highlight" : "text-text-primary"
-                  } relative after:bg-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`
-                }
+                className={`para-md relative after:bg-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`}
               >
                 {label}
               </Link>

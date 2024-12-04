@@ -24,6 +24,7 @@ const Projects = () => {
             tools,
           }) => (
             <div
+              key={title}
               data-aos="fade-up"
               className="mx-auto grid w-full grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-1"
             >
@@ -36,8 +37,8 @@ const Projects = () => {
                     {subtitle}
                   </p>
                   <dl className="mt-5 w-full space-y-3 text-sm md:text-base leading-7 text-text-secondary lg:max-w-none">
-                    {description?.map((desc) => (
-                      <div className="relative pl-9">
+                    {description?.map((desc, index) => (
+                      <div className="relative pl-9" key={`project_${index}`}>
                         <dt className="inline font-semibold text-gray-900">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
