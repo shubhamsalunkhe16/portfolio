@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="text-center border-t-2 border-text-secondary pt-6 bg-bg-card">
       <h1 className="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900">
         <Link
-          to="home_section"
+          to="hero_section"
           offset={-90}
           spy={true}
           smooth={true}

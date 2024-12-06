@@ -1,7 +1,10 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
+import userMeta from "../constants/userMeta";
+import calculateYearsFrom from "../utils/calculateYearsFrom";
 
 const MyStory = () => {
+  const { myStory, journeyStartDate } = userMeta;
   return (
     <section id="my_story" data-aos="fade-up">
       <SectionHeader title="My Story" className={"text-left"} borderTop />
@@ -15,23 +18,10 @@ const MyStory = () => {
         </div>
         <div className="flex-[3]">
           <p className="text-sm md:text-base my-4 text-center min-[950px]:text-left">
-            I’m Shubham Bhagwan Salunkhe, a dedicated Frontend Developer with
-            over 3+ years of experience in building innovative, scalable, and
-            user-centered web applications. After graduating in 2019, I’ve honed
-            my skills in both frontend and backend technologies, working on
-            projects that integrate AI, optimize performance, and enhance user
-            experience. At GoPhygital, I’ve contributed significantly to the
-            development of AI-driven platforms for global brands like Mastercard
-            and Vodafone, with a focus on cutting-edge features like
-            text-to-speech functionality and real-time content creation tools.
-            My passion for coding is matched by my commitment to team
-            collaboration, having successfully mentored colleagues and
-            streamlined development processes. Whether developing custom
-            ECommerce solutions or creating dynamic, interactive user
-            interfaces, I am always driven by the goal to build seamless,
-            efficient, and impactful digital experiences. I believe in
-            continuous learning and strive to deliver high-quality solutions
-            that address real-world challenges.
+            {myStory?.replace(
+              "[experienceYears]",
+              Math.round(calculateYearsFrom(journeyStartDate))
+            )}
           </p>
         </div>
       </div>

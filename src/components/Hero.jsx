@@ -3,12 +3,14 @@ import CodeSnippet from "./CodeSnippet";
 import Button from "./Button";
 import userMeta from "../constants/userMeta";
 import DownloadPDF from "../utils/DownloadPDF";
+import calculateYearsFrom from "../utils/calculateYearsFrom";
 
 const Hero = () => {
-  const { name, summary } = userMeta;
+  const { name, summary, journeyStartDate } = userMeta;
 
   return (
     <section
+      id="hero_section"
       className="flex justify-between items-center gap-16 max-[950px]:gap-10 flex-wrap flex-col min-[950px]:flex-row mb-8"
       data-aos="fade-up"
     >
@@ -20,12 +22,15 @@ const Hero = () => {
           {name}
         </h1>
         <p className="text-sm md:text-base my-4 text-center min-[950px]:text-left">
-          {summary}
+          {summary?.replace(
+            "[experienceYears]",
+            Math.round(calculateYearsFrom(journeyStartDate))
+          )}
         </p>
         <Button
           className="mt-2"
           onClick={() =>
-            DownloadPDF("/shubham_resume.pdf", "shubham_resume.pdf")
+            DownloadPDF("/shubham_salunkhe.pdf", "shubham_salunkhe.pdf")
           }
         >
           Download CV

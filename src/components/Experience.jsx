@@ -29,7 +29,7 @@ const Experience = () => {
       <SectionHeader title={"EXPERIENCE"} borderTop />
       <div className="mx-auto w-full">
         {experiences?.map(
-          ({ title, subtitle, description, imageArr, tools }) => (
+          ({ title, subtitle, description, imageArr, tools, date }) => (
             <div
               key={title}
               data-aos="fade-up"
@@ -40,8 +40,10 @@ const Experience = () => {
                   <h2 className="mt-2 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
                     {title}
                   </h2>
-                  <p className="text-base font-semibold leading-7 text-primary mt-2">
-                    {subtitle}
+                  <p className="text-base font-semibold leading-7 text-primary mt-2 flex justify-between">
+                    {/* <span>{subtitle}</span>
+                    <span>{date}</span> */}
+                    {subtitle}&nbsp; ● &nbsp;{date}
                   </p>
                   <dl className="mt-5 w-full space-y-3 text-sm md:text-base leading-7 text-text-secondary lg:max-w-none">
                     {description?.map((desc) => (

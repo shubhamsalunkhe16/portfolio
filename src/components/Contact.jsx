@@ -11,8 +11,8 @@ const Contact = () => {
       <div className="lg:text-center">
         <SectionHeader title={"LET'S CONNECT"} borderTop />
       </div>
-      <div className="mt-10">
-        <dl className="space-y-10 md:space-y-0 md:grid lg:grid-cols-2 md:gap-x-8 md:gap-y-10 mb-10">
+      <div className="mt-12 md:mt-20">
+        <dl className="space-y-10 md:space-y-0 md:grid lg:grid-cols-2 md:gap-x-16 md:gap-y-24 mb-10">
           <div className="flex">
             <div className="flex-shrink-0">
               <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-black">

@@ -11,12 +11,12 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const homeNav = [
-    { label: "Home", to: "home_section", offset: -90 },
-    { label: "About", to: "my_story", offset: -60 },
-    { label: "Skills", to: "skills", offset: -40 },
-    { label: "Experience", to: "experience", offset: -40 },
-    { label: "Projects", to: "projects", offset: -40 },
-    { label: "Contact", to: "contact", offset: 0 },
+    { label: "Home", to: "hero_section", offset: -300 },
+    { label: "About", to: "my_story", offset: -160 },
+    { label: "Skills", to: "skills", offset: -140 },
+    { label: "Experience", to: "experience", offset: -140 },
+    { label: "Projects", to: "projects", offset: -140 },
+    { label: "Contact", to: "contact", offset: -160 },
   ];
 
   return (
@@ -38,12 +38,12 @@ const Navbar = () => {
           <Link
             key={label}
             to={to}
-            // activeClass="after:w-full"
+            activeClass="after:w-full"
             spy={true}
             smooth={true}
             offset={offset}
             duration={300}
-            className="para-md relative after:bg-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
+            className="para-md relative after:bg-primary text-text-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
           >
             {label}
           </Link>
@@ -68,17 +68,18 @@ const Navbar = () => {
         }`}
       >
         <div className="px-8 py-16 pt-24">
-          <div className="flex flex-col items-center gap-8 font-bold tracking-wider">
+          <div className="flex flex-col h-[calc(100dvh-120px)] justify-center items-center gap-8 font-bold tracking-wider">
             {homeNav?.map(({ label, to, offset }) => (
               <Link
                 key={label}
                 to={to}
-                // activeClass="after:w-full"
+                activeClass="after:w-full"
                 spy={true}
                 smooth={true}
                 offset={offset}
                 duration={300}
-                className={`para-md relative after:bg-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`}
+                className={`para-md relative text-text-primary after:bg-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`}
+                onClick={() => setToggleMenu(false)}
               >
                 {label}
               </Link>
