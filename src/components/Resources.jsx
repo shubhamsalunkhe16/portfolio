@@ -11,7 +11,7 @@ const Resources = () => {
   return (
     <div className="mb-4" id="resources" data-aos="fade-up">
       <SectionHeader title="RESOURCES" className={"text-left"} borderTop />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-0 sm:mt-4 mb-8">
         {resources.map((resource) => (
           <div
             key={resource.title}

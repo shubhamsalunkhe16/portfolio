@@ -41,7 +41,10 @@ const Blogs = () => {
       <SectionHeader title="BLOGS" borderTop className={"text-left"} />
       <div class="grid grid-cols-1 divide-y">
         {blogs.slice(0, visiblePosts).map((blog) => (
-          <div key={blog.title} className="w-5/6 mx-auto py-8">
+          <div
+            key={blog.title}
+            className="w-full sm:w-5/6 mx-auto [&:not(:first-child)]:py-4 sm:py-8"
+          >
             <h2 className="heading-4xl mb-2">{blog.title}</h2>
             <p className="time mb-8 text-primary">{blog.date}</p>
             {blog.sections.map((section, secIndex) => (
