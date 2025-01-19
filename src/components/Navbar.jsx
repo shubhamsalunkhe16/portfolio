@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import navConstants from "../constants/navStrings";
-import { ReactComponent as MenuBar } from "../assets/icons/menu-bar.svg";
-import { ReactComponent as Close } from "../assets/icons/close.svg";
 import ThemeBtn from "./ThemeBtn";
 import { Link } from "react-scroll";
+import { Menu, X } from "lucide-react";
 
 const navlinks = navConstants.NAVLINKS;
 
@@ -16,6 +15,8 @@ const Navbar = () => {
     { label: "Skills", to: "skills", offset: -140 },
     { label: "Experience", to: "experience", offset: -140 },
     { label: "Projects", to: "projects", offset: -140 },
+    { label: "Resources", to: "resources", offset: -160 },
+    { label: "Blogs", to: "blogs", offset: -160 },
     { label: "Contact", to: "contact", offset: -160 },
   ];
 
@@ -33,7 +34,7 @@ const Navbar = () => {
           &lt;shubh/&gt;
         </Link>
       </div>
-      <div className="hidden lg:flex justify-between items-center gap-12">
+      <div className="hidden [@media(min-width:1120px)]:flex justify-between items-center gap-12">
         {homeNav?.map(({ label, to, offset }) => (
           <Link
             key={label}
@@ -50,20 +51,20 @@ const Navbar = () => {
         ))}
         <ThemeBtn />
       </div>
-      <div className="flex justify-between items-center gap-6 lg:hidden w-fit">
-        <div className="lg:hidden flex gap-5 sm:gap-8 items-center z-50 text-text-primary">
+      <div className="flex justify-between items-center gap-6 [@media(min-width:1120px)]:hidden w-fit">
+        <div className="[@media(min-width:1120px)]:hidden flex gap-5 sm:gap-8 items-center z-50 text-text-primary">
           <ThemeBtn />
           <button onClick={() => setToggleMenu(!toggleMenu)}>
             {toggleMenu ? (
-              <Close className="h-6 fill-primary" />
+              <X className="h-7 w-7 text-primary rotate-0 transition-all" />
             ) : (
-              <MenuBar className="h-6 fill-primary" />
+              <Menu className="h-7 w-7 text-primary rotate-0 transition-all" />
             )}
           </button>
         </div>
       </div>
       <div
-        className={`fixed z-40 w-full bg-bg-card overflow-hidden flex flex-col lg:hidden gap-12 top-0 left-0 duration-700 ${
+        className={`fixed z-40 w-full bg-bg-card overflow-hidden flex flex-col  [@media(min-width:1120px)]:hidden gap-12 top-0 left-0 duration-700 ${
           !toggleMenu ? "h-0" : "h-full"
         }`}
       >

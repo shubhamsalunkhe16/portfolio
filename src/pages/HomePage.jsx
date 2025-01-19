@@ -6,6 +6,8 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Layout from "../components/Layout";
 import Skills from "../components/Skills";
+import Resources from "../components/Resources";
+import Blogs from "../components/Blogs";
 
 const HomePage = () => {
   return (
@@ -15,6 +17,8 @@ const HomePage = () => {
       <Skills />
       <Experience />
       <Projects />
+      <Resources />
+      <Blogs />
       <Contact />
     </Layout>
   );

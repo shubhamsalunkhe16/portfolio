@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { ReactComponent as Arrow } from "../assets/icons/downArrow.svg";
 import { throttle } from "lodash";
+import { ArrowUpLeft } from "lucide-react";
 
 const ScrollToTopButton = () => {
   const MIN_SCROLL_TOP_TO_SHOW_BTN = 100;
@@ -34,10 +34,10 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <Arrow
+    <ArrowUpLeft
       className={`${
         visible ? "opacity-100" : "opacity-0"
-      } transition-opacity ease-in-out duration-500 fixed bottom-2 right-2 w-8 h-8 p-[6px] rotate-180 cursor-pointer rounded-full bg-primary stroke-black`}
+      } transition-opacity ease-in-out duration-500 fixed bottom-2 right-2 w-8 h-8 p-[6px] rotate-45 cursor-pointer rounded-full bg-primary stroke-black`}
       onClick={scrollToTop}
     />
   );

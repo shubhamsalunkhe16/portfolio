@@ -69,25 +69,34 @@ pre {
   .heading-3xl {
     @apply text-2xl lg:text-3xl font-bold text-text-primary font-Lato;
   }
+  .heading-4xl {
+    @apply text-3xl lg:text-4xl font-bold text-text-primary font-Lato;
+  }
+  .heading-5xl {
+    @apply text-4xl lg:text-5xl font-bold text-text-primary font-Lato;
+  }
+  .heading-6xl {
+    @apply text-5xl lg:text-6xl font-bold text-text-primary font-Lato;
+  }
 
   .para-sm {
-    @apply text-xs lg:text-sm font-normal text-text-secondary;
+    @apply text-xs lg:text-sm font-normal text-text-primary;
   }
 
   .para-md {
-    @apply text-sm lg:text-base font-normal text-text-secondary;
+    @apply text-sm lg:text-base font-normal text-text-primary;
   }
 
   .para-lg {
-    @apply text-base lg:text-lg font-normal text-text-secondary;
+    @apply text-base lg:text-lg font-normal text-text-primary;
   }
 
   .para-xl {
-    @apply text-lg lg:text-xl font-normal text-text-secondary;
+    @apply text-lg lg:text-xl font-normal text-text-primary;
   }
 
-  .time_ago {
-    @apply text-xs lg:text-sm font-normal text-gray-700;
+  .time {
+    @apply text-xs lg:text-sm font-normal;
   }
 
   .divider {
