@@ -2,19 +2,15 @@ import React from "react";
 import { Linkedin, Github, Instagram } from "lucide-react";
 import userMeta from "../constants/userMeta";
 import openLink from "../utils/openLink";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { socialLinks } = userMeta;
   return (
-    <div className="text-center border-t-2 border-text-secondary pt-6 bg-bg-card">
+    <div className="text-center border-t-2 border-text-secondary py-6 px-2 bg-bg-card">
       <h1 className="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900">
         <Link
           to="hero_section"
-          offset={-90}
-          spy={true}
-          smooth={true}
-          duration={300}
           className="heading-3xl highlight flex gap-2 items-center cursor-pointer"
         >
           &lt;shubh/&gt;

@@ -4,7 +4,7 @@
     "--bg-card": "#e7e7e7 ",
     "--text-primary": "#000000",
     "--text-secondary": "##53555b",
-    "--primary": "#2995ff"
+    "--primary": "#0d63f8"
   },
   "dark": {
     "--bg-primary": "#000000",

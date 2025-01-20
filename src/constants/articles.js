@@ -1,7 +1,9 @@
-const blogs = [
+const articles = [
   {
     id: 1,
     title: "Currying Explained with a Coffee Example",
+    description:
+      "Discover the concept of currying in JavaScript through a coffee-making analogy. Learn its benefits and how to implement it effectively for cleaner, reusable functions in your projects.",
     date: "January 1, 2025",
     sections: [
       {
@@ -37,6 +39,8 @@ const blogs = [
   {
     id: 2,
     title: "Closure Explained with a Bank Example",
+    description:
+      "Understand closures in JavaScript with a relatable bank example, demonstrating how functions retain access to variables in their scope, even after their parent function has executed.",
     date: "January 6, 2025",
     sections: [
       {
@@ -85,6 +89,8 @@ const blogs = [
   {
     id: 3,
     title: "Promises in JavaScript with Pizza Delivery Example",
+    description:
+      "Learn JavaScript Promises with a relatable pizza delivery example, exploring pending, fulfilled, and rejected states. Understand asynchronous programming concepts and their real-world applications effectively.",
     date: "January 19, 2025",
     sections: [
       {
@@ -166,6 +172,8 @@ const blogs = [
   {
     id: 4,
     title: "Event Delegation in React with Todo List Example",
+    description:
+      "Learn Event Delegation in React with a practical Todo List example, enhancing performance by efficiently managing events on dynamically added list items using a single parent handler.",
     date: "January 26, 2025",
     sections: [
       {
@@ -232,6 +240,8 @@ const blogs = [
   {
     id: 5,
     title: "Understanding `call`, `apply`, and `bind` in JavaScript",
+    description:
+      "Learn the key differences between `call`, `apply`, and `bind` in JavaScript, with practical examples to simplify method invocation and context binding in your projects.",
     date: "February 2, 2025",
     sections: [
       {
@@ -293,6 +303,8 @@ const blogs = [
   {
     id: 6,
     title: "Hoisting in JavaScript",
+    description:
+      "Hoisting in JavaScript explains how variable and function declarations are moved to the top during compilation, affecting scope, var, let, const, and function behavior.",
     date: "February 8, 2025",
     sections: [
       {
@@ -357,56 +369,5 @@ const blogs = [
       },
     ],
   },
-  {
-    id: 7,
-    title: "Scope in JavaScript",
-    date: "February 14, 2025",
-    sections: [
-      {
-        heading: "What is Scope?",
-        content:
-          "Scope in JavaScript refers to the current context of execution, where variables and functions are accessible. There are two types of scope in JavaScript: global scope and local scope.",
-      },
-      {
-        heading: "Types of Scope",
-        content: [
-          {
-            point: "Global Scope",
-            details:
-              "Variables and functions declared outside any function or block are in the global scope. They are accessible from anywhere in the code.",
-          },
-          {
-            point: "Local Scope",
-            details:
-              "Variables declared inside a function or block are in the local scope and are only accessible within that function or block.",
-          },
-        ],
-      },
-      {
-        heading: "Lexical Scope",
-        content:
-          "Lexical scope means that a function's scope is determined by where the function is defined, not where it is called. It helps in creating closures in JavaScript.",
-      },
-      {
-        heading: "Code Example - Scope in Action",
-        code: "var globalVar = 'I am global';\n\nfunction localScopeExample() {\n  var localVar = 'I am local';\n  console.log(globalVar); // Outputs: I am global\n  console.log(localVar);  // Outputs: I am local\n}\n\nconsole.log(globalVar); // Outputs: I am global\nconsole.log(localVar); // Error: localVar is not defined",
-      },
-      {
-        heading: "Step-by-Step Explanation",
-        content: [
-          {
-            point: "Global Scope",
-            details:
-              "The variable `globalVar` is in the global scope, so it can be accessed anywhere in the code.",
-          },
-          {
-            point: "Local Scope",
-            details:
-              "The variable `localVar` is inside the `localScopeExample()` function, so it can only be accessed inside the function.",
-          },
-        ],
-      },
-    ],
-  },
 ];
-export default blogs;
+export default articles;

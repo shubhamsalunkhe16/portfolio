@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section
       id="hero_section"
-      className="flex justify-between items-center gap-16 max-[950px]:gap-10 flex-wrap flex-col min-[950px]:flex-row mb-8"
+      className="flex justify-between items-center gap-16 max-[950px]:gap-2 flex-wrap flex-col min-[950px]:flex-row"
       data-aos="fade-up"
     >
       <div className="flex-1 text-text-primary flex flex-col gap-2 justify-center items-center min-[950px]:items-start">

@@ -7,8 +7,8 @@ const MyStory = () => {
   const { myStory, journeyStartDate } = userMeta;
   return (
     <section id="my_story" data-aos="fade-up">
-      <SectionHeader title="MY STORY" className={"text-left"} borderTop />
-      <div className="flex gap-8 md:gap-16 flex-col items-center lg:flex-row my-4 md:my-8">
+      <SectionHeader title="MY STORY" className={"text-left"} />
+      <div className="flex gap-8 md:gap-16 flex-col items-center lg:flex-row">
         <div className="flex-[2.5] ">
           <img
             src="images/shubham1.jpg"

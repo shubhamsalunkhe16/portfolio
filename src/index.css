@@ -55,7 +55,7 @@ pre {
   }
 
   .heading-lg {
-    @apply text-base lg:text-lg font-bold text-text-primary font-Lato;
+    @apply text-base lg:text-lg font-bold text-text-primary;
   }
 
   .heading-xl {
@@ -63,20 +63,23 @@ pre {
   }
 
   .heading-2xl {
-    @apply text-xl lg:text-2xl font-bold text-text-primary font-Lato;
+    @apply text-xl lg:text-2xl font-bold text-text-primary;
   }
 
   .heading-3xl {
-    @apply text-2xl lg:text-3xl font-bold text-text-primary font-Lato;
+    @apply text-2xl lg:text-3xl font-bold text-text-primary;
   }
+
   .heading-4xl {
-    @apply text-3xl lg:text-4xl font-bold text-text-primary font-Lato;
+    @apply text-3xl lg:text-4xl font-bold text-text-primary;
   }
+
   .heading-5xl {
-    @apply text-4xl lg:text-5xl font-bold text-text-primary font-Lato;
+    @apply text-4xl lg:text-5xl font-bold text-text-primary;
   }
+
   .heading-6xl {
-    @apply text-5xl lg:text-6xl font-bold text-text-primary font-Lato;
+    @apply text-5xl lg:text-6xl font-bold text-text-primary;
   }
 
   .para-sm {

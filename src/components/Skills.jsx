@@ -1,22 +1,17 @@
-import { Sparkle, TrendingUp } from "lucide-react";
+import { Sparkle } from "lucide-react";
 import userMeta from "../constants/userMeta";
 import SectionHeader from "./SectionHeader";
 
 const Skills = () => {
   const { skillMeta } = userMeta;
   return (
-    <section
-      id="skills"
-      data-aos="fade-up"
-      className="py-4 pb-0 mx-auto w-full"
-    >
-      <SectionHeader title="SKILLS AND TOOLS" borderTop />
-      <p className="text-sm md:text-base my-4 mb-12 text-center max-w-screen-lg mx-auto">
-        Versatile in web development with expertise in frontend and Capable of
-        designing and implementing efficient backend architectures, database
-        management, and collaborative tools. Proficient in creating responsive
-        designs, implementing secure authentication, and optimizing user
-        experiences.
+    <section id="skills" data-aos="fade-up" className=" mx-auto w-full">
+      <SectionHeader title="SKILLS AND TOOLS" />
+      <p className="text-sm md:text-base  mb-12 text-center max-w-screen-lg mx-auto">
+        Versatile in web development with expertise in frontend development and
+        a good understanding of backend architectures and database management.
+        Skilled in creating responsive designs, implementing secure
+        authentication, and optimizing user experiences.
       </p>
       <div className="grid w-full gap-8 md:gap-14 grid-cols-2 sm:grid-cols-3">
         {skillMeta.map(({ title, description, skills }) => (

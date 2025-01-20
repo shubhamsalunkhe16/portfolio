@@ -18,7 +18,7 @@ const Resources = [
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7272627155774156800/",
   },
   {
-    title: "JavaScript Basics & jQuery Notes",
+    title: "JavaScript Basics & jQuery Handwritten Notes",
     description:
       "Detailed notes on JavaScript fundamentals like variables, functions, and loops, along with jQuery essentials for DOM manipulation, animations. Ideal for mastering interactivity in web development.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7283151165062602752/",

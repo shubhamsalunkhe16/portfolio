@@ -1,58 +1,42 @@
 import React, { useState } from "react";
-import navConstants from "../constants/navStrings";
+import navConstants from "../constants/navConstants";
 import ThemeBtn from "./ThemeBtn";
-import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
+import { NavLink, Link } from "react-router-dom";
 
 const navlinks = navConstants.NAVLINKS;
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const homeNav = [
-    { label: "Home", to: "hero_section", offset: -300 },
-    { label: "About", to: "my_story", offset: -160 },
-    { label: "Skills", to: "skills", offset: -140 },
-    { label: "Experience", to: "experience", offset: -140 },
-    { label: "Projects", to: "projects", offset: -140 },
-    { label: "Resources", to: "resources", offset: -160 },
-    { label: "Blogs", to: "blogs", offset: -160 },
-    { label: "Contact", to: "contact", offset: -160 },
-  ];
-
   return (
     <nav className="flex gap-6 justify-between items-center px-7 py-5 bg-bg-card text-text-primary fixed top-0 w-screen z-50 shadow-sm">
-      <div className="z-50 cursor-pointer">
+      <div className="z-50">
         <Link
-          className="heading-3xl highlight flex gap-2 items-center"
-          to={homeNav[0].to}
-          offset={homeNav[0].offset}
-          spy={true}
-          smooth={true}
-          duration={300}
+          className="heading-3xl highlight flex gap-2 items-center cursor-pointer"
+          to={navConstants.HOME}
         >
           &lt;shubh/&gt;
         </Link>
       </div>
-      <div className="hidden [@media(min-width:1120px)]:flex justify-between items-center gap-12">
-        {homeNav?.map(({ label, to, offset }) => (
-          <Link
+      <div className="hidden [@media(min-width:950px)]:flex justify-between items-center gap-12">
+        {navlinks?.map(({ label, path }) => (
+          <NavLink
             key={label}
-            to={to}
-            activeClass="after:w-full"
-            spy={true}
-            smooth={true}
-            offset={offset}
-            duration={300}
-            className="para-md relative after:bg-primary text-text-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
+            to={path}
+            className={({ isActive }) =>
+              `${
+                isActive ? "after:w-full" : ""
+              } para-md relative after:bg-primary text-text-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`
+            }
           >
             {label}
-          </Link>
+          </NavLink>
         ))}
         <ThemeBtn />
       </div>
-      <div className="flex justify-between items-center gap-6 [@media(min-width:1120px)]:hidden w-fit">
-        <div className="[@media(min-width:1120px)]:hidden flex gap-5 sm:gap-8 items-center z-50 text-text-primary">
+      <div className="flex justify-between items-center gap-6 [@media(min-width:950px)]:hidden w-fit">
+        <div className="[@media(min-width:950px)]:hidden flex gap-5 sm:gap-8 items-center z-50 text-text-primary">
           <ThemeBtn />
           <button onClick={() => setToggleMenu(!toggleMenu)}>
             {toggleMenu ? (
@@ -64,26 +48,25 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`fixed z-40 w-full bg-bg-card overflow-hidden flex flex-col  [@media(min-width:1120px)]:hidden gap-12 top-0 left-0 duration-700 ${
+        className={`fixed z-40 w-full bg-bg-card overflow-hidden flex flex-col  [@media(min-width:950px)]:hidden gap-12 top-0 left-0 duration-700 ${
           !toggleMenu ? "h-0" : "h-full"
         }`}
       >
         <div className="px-8 py-16 pt-24">
           <div className="flex flex-col h-[calc(100dvh-120px)] justify-center items-center gap-8 font-bold tracking-wider">
-            {homeNav?.map(({ label, to, offset }) => (
-              <Link
+            {navlinks?.map(({ label, path }) => (
+              <NavLink
                 key={label}
-                to={to}
-                activeClass="after:w-full"
-                spy={true}
-                smooth={true}
-                offset={offset}
-                duration={300}
-                className={`para-md relative text-text-primary after:bg-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`}
+                to={path}
+                className={({ isActive }) =>
+                  `${
+                    isActive ? "after:w-full" : ""
+                  } para-md relative after:bg-primary text-text-primary after:absolute after:h-[2px] after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`
+                }
                 onClick={() => setToggleMenu(false)}
               >
                 {label}
-              </Link>
+              </NavLink>
             ))}
           </div>
         </div>
