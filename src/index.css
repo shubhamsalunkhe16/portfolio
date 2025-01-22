@@ -13,13 +13,7 @@ body {
   overflow-x: hidden;
   font-family: "Poppins", serif;
   background-color: var(--bg-primary);
-  /* scroll-behavior: smooth; */
 }
-
-/* html {
-  scroll-behavior: smooth;
-  scroll-padding: 100px;
-} */
 
 code {
   font-family: "Fira Code", monospace !important;
@@ -32,7 +26,7 @@ pre {
 @layer base {
   @media (min-width: 768px) {
     body {
-      @apply text-sm; /* Reduce font size for screens wider than 768px */
+      @apply text-sm;
     }
   }
 }
@@ -122,22 +116,6 @@ pre {
   stroke: var(--primary);
 }
 
-::-webkit-scrollbar {
-  height: 5px;
-  width: 5px;
-  background: var(--background);
-  -webkit-border-radius: 1ex;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  -webkit-border-radius: 1ex;
-}
-
-::-webkit-scrollbar-corner {
-  background: #fff3;
-}
-
 .progress {
   position: fixed;
   left: 0;
@@ -162,6 +140,18 @@ pre {
   color: var(--primary);
 }
 
-/* section {
-  min-height: 100vh;
-} */
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: var(--background);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: #fff3;
+}

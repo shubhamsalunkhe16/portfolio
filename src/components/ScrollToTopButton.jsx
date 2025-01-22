@@ -8,7 +8,6 @@ const ScrollToTopButton = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", throttledScroll);
-
     return () => {
       window.removeEventListener("scroll", throttledScroll);
     };
