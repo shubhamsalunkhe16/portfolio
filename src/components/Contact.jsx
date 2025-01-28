@@ -14,7 +14,7 @@ const Contact = () => {
       <dl className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-x-10 md:gap-x-14 gap-y-10 lg:gap-y-14">
         <div className="flex gap-4 items-center">
           <div className="flex-shrink-0">
-            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-black">
+            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-bg-primary">
               <MailIcon />
             </div>
           </div>
@@ -29,7 +29,7 @@ const Contact = () => {
         </div>
         <div className="flex">
           <div className="flex-shrink-0">
-            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-black">
+            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-bg-primary">
               <PhoneCall />
             </div>
           </div>
@@ -43,7 +43,7 @@ const Contact = () => {
 
         <div className="flex">
           <div className="flex-shrink-0">
-            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-black">
+            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-bg-primary">
               <Linkedin />
             </div>
           </div>
@@ -62,14 +62,14 @@ const Contact = () => {
 
         <div className="flex">
           <div className="flex-shrink-0">
-            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-black">
+            <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-bg-primary">
               <MapPin />
             </div>
           </div>
           <div className="ml-4">
             <dt className="heading-xl">Address</dt>
             <dd className="para-md text-text-secondary">
-              Charop, Kandiwali (w.),
+              Charkop, Kandiwali (w.),
               <br />
               Mumbai-67
             </dd>

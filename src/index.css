@@ -13,6 +13,7 @@ body {
   overflow-x: hidden;
   font-family: "Poppins", serif;
   background-color: var(--bg-primary);
+  accent-color: var(--primary);
 }
 
 code {

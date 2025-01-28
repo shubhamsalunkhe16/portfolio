@@ -4,7 +4,7 @@ const Button = ({ children, className = "", ...restProps }) => {
   return (
     <button
       {...restProps}
-      className={`text-sm md:text-base inline-block rounded-full bg-primary px-5 py-3 text-center font-bold text-black transition hover:border-black hover:bg-text-primary hover:text-bg-primary ${className}`}
+      className={`text-sm md:text-base inline-block rounded-full bg-primary px-5 py-3 text-center font-bold text-bg-primary transition hover:border-bg-primary hover:bg-text-primary hover:text-bg-primary ${className}`}
     >
       {children}
     </button>

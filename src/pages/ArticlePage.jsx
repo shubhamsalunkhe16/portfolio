@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import articles from "../constants/articles";
 import SectionHeader from "../components/SectionHeader";
 import Button from "../components/Button";
-import ArticleCard from "../components/ArticleCard";
+import ArticleDetail from "../components/ArticleDetail";
 
 const ArticlePage = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const ArticlePage = () => {
         </section>
       ) : (
         <section className="pt-12">
-          <ArticleCard article={article} />
+          <ArticleDetail article={article} />
           <div className="w-full mx-auto mb-8 text-center">
             <Button onClick={handleBackClick}>Back</Button>
           </div>

@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <main className="w-10/12 rounded-lg m-auto max-w-screen-2xl min-h-screen mt-[76px] shadow-sm text-text-primary">
+      <main className="w-10/12 rounded-lg m-auto max-w-screen-2xl min-h-screen mt-[76px] text-text-primary">
         {children}
       </main>
       <ScrollToTopButton />

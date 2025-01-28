@@ -239,33 +239,33 @@ const articles = [
   },
   {
     id: 5,
-    title: "Understanding `call`, `apply`, and `bind` in JavaScript",
+    title: "Understanding call, apply, and bind in JavaScript",
     description:
-      "Learn the key differences between `call`, `apply`, and `bind` in JavaScript, with practical examples to simplify method invocation and context binding in your projects.",
+      "Learn the key differences between call, apply, and bind in JavaScript, with practical examples to simplify method invocation and context binding in your projects.",
     date: "February 2, 2025",
     sections: [
       {
-        heading: "What are `call`, `apply`, and `bind`?",
+        heading: "What are call, apply, and bind?",
         content:
-          "In JavaScript, `call`, `apply`, and `bind` are methods used to control the value of `this` in a function. These methods allow you to invoke a function with a specified `this` context, and optionally pass arguments. They are extremely useful in various scenarios, including function borrowing and setting the context of a function's execution.",
+          "In JavaScript, call, apply, and bind are methods used to control the value of this in a function. These methods allow you to invoke a function with a specified this context, and optionally pass arguments. They are extremely useful in various scenarios, including function borrowing and setting the context of a function's execution.",
       },
       {
-        heading: "Why Use `call`, `apply`, and `bind`?",
+        heading: "Why Use call, apply, and bind?",
         content: [
           {
-            point: "Control the Context of `this`",
+            point: "Control the Context of this",
             details:
               "These methods allow you to control which object the function is executed in, by specifying a specific `this` value. This is particularly useful when dealing with object methods.",
           },
           {
             point: "Borrow Methods from Other Objects",
             details:
-              "With `call` and `apply`, you can borrow methods from other objects and use them on the current object.",
+              "With call and apply, you can borrow methods from other objects and use them on the current object.",
           },
           {
             point: "Optimize Performance with Function Binding",
             details:
-              "`bind` allows you to create a new function with a fixed `this` context, which can be useful in event handling or setting the context for callbacks.",
+              "bind allows you to create a new function with a fixed this context, which can be useful in event handling or setting the context for callbacks.",
           },
         ],
       },
@@ -275,26 +275,26 @@ const articles = [
           "Let's explore each method with examples that illustrate their usage, including how we can pass parameters to the functions.",
       },
       {
-        heading: "`call`, `apply`, and `bind` Code Example",
+        heading: "call, apply, and bind Code Example",
         code: "const person = {\n  firstName: 'John',\n  lastName: 'Doe',\n  fullName: function(city, country) {\n    return `${this.firstName} ${this.lastName}, ${city}, ${country}`;\n  }\n};\n\nconst anotherPerson = {\n  firstName: 'Jane',\n  lastName: 'Smith'\n};\n\n// Using call with parameters\nconsole.log(person.fullName.call(anotherPerson, 'Paris', 'France')); // Outputs: Jane Smith, Paris, France\n\n// Using apply with parameters\nconsole.log(person.fullName.apply(anotherPerson, ['Paris', 'France'])); // Outputs: Jane Smith, Paris, France\n\n// Using bind with parameters\nconst boundFullName = person.fullName.bind(anotherPerson, 'Paris', 'France');\nconsole.log(boundFullName()); // Outputs: Jane Smith, Paris, France",
       },
       {
         heading: "Step-by-Step Explanation",
         content: [
           {
-            point: "`call` Method with Parameters",
+            point: "call Method with Parameters",
             details:
-              "The `call` method allows you to invoke a function with a specified `this` context and pass parameters directly. In this case, `call(anotherPerson, 'Paris', 'France')` changes `this` to `anotherPerson` and passes the parameters 'Paris' and 'France' to the `fullName` function.",
+              "The call method allows you to invoke a function with a specified this context and pass parameters directly. In this case, call(anotherPerson, 'Paris', 'France') changes this to anotherPerson and passes the parameters 'Paris' and 'France' to the fullName function.",
           },
           {
-            point: "`apply` Method with Parameters",
+            point: "apply Method with Parameters",
             details:
-              "The `apply` method works similarly to `call`, but instead of passing parameters directly, you pass them as an array. In this case, `apply(anotherPerson, ['Paris', 'France'])` passes 'Paris' and 'France' as an array to the `fullName` function.",
+              "The apply method works similarly to call, but instead of passing parameters directly, you pass them as an array. In this case, apply(anotherPerson, ['Paris', 'France']) passes 'Paris' and 'France' as an array to the fullName function.",
           },
           {
-            point: "`bind` Method with Parameters",
+            point: "bind Method with Parameters",
             details:
-              "`bind` creates a new function with a fixed `this` context and predefined parameters. The `boundFullName` function is created with `this` bound to `anotherPerson` and the parameters 'Paris' and 'France'. When `boundFullName()` is called later, it outputs 'Jane Smith, Paris, France'.",
+              "bind creates a new function with a fixed this context and predefined parameters. The boundFullName function is created with this bound to anotherPerson and the parameters 'Paris' and 'France'. When boundFullName() is called later, it outputs 'Jane Smith, Paris, France'.",
           },
         ],
       },
@@ -334,9 +334,9 @@ const articles = [
       },
       {
         heading:
-          "TDZ Example with `let`, `const`, `var`, Function and Arrow Function",
+          "TDZ Example with let, const, var, Function and Arrow Function",
         content:
-          "Unlike `var`, `let` and `const` are hoisted to the top of their scope but are not initialized until their declaration line is executed. This causes a Temporal Dead Zone (TDZ) where accessing the variable before its declaration will result in a ReferenceError.",
+          "Unlike var, let and const are hoisted to the top of their scope but are not initialized until their declaration line is executed. This causes a Temporal Dead Zone (TDZ) where accessing the variable before its declaration will result in a ReferenceError.",
       },
       {
         heading: "Code Example - Hoisting with TDZ",

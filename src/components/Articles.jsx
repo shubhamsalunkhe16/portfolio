@@ -1,6 +1,6 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
-import ArticleCard from "./ArticleCard";
+import ArticleDetail from "./ArticleDetail";
 
 const Articles = ({ articles }) => {
   return (
@@ -8,7 +8,7 @@ const Articles = ({ articles }) => {
       <SectionHeader title="ARTICLES" className={"text-left"} />
       <div class="grid grid-cols-1 divide-y divide-text-primary">
         {articles?.map((article) => (
-          <ArticleCard article={article} />
+          <ArticleDetail article={article} />
         ))}
       </div>
     </div>
