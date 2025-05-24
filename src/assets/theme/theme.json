@@ -1,7 +1,7 @@
 {
   "light": {
     "--bg-primary": "#fff",
-    "--bg-card": "#e7e7e7 ",
+    "--bg-card": "#f5f5f5 ",
     "--text-primary": "#000000",
     "--text-secondary": "##53555b",
     "--primary": "#0d63f8"

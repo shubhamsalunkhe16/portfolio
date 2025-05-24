@@ -10,7 +10,7 @@ const navConstants = {
     return [
       { label: "Home", path: this.HOME },
       { label: "Experience", path: this.EXPERIENCE },
-      { label: "Projects", path: this.PROJECTS },
+      { label: "Personal Projects", path: this.PROJECTS },
       { label: "Articles", path: this.ARTICLES },
       { label: "Resources", path: this.RESOURCES },
       { label: "Contact", path: this.CONTACT },

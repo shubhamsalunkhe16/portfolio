@@ -10,7 +10,7 @@ const Projects = ({ projects }) => {
 
   return (
     <section className="overflow-hidden" id="projects" data-aos="fade-up">
-      <SectionHeader title={"PROJECTS"} />
+      <SectionHeader title={"PERSONAL PROJECTS"} />
       <div className="w-full divide-y divide-text-primary">
         {projects?.map(
           ({

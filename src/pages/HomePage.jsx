@@ -14,6 +14,7 @@ import articles from "../constants/articles";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import navConstants from "../constants/navConstants";
+import Testimonials from "../components/Testimonials";
 
 const HomePage = () => {
   const { experiences, projects } = userMeta;
@@ -33,6 +34,7 @@ const HomePage = () => {
         <Hero />
         <MyStory />
         <Skills />
+        <Testimonials />
         <section>
           <Experience experiences={experiences?.slice(0, 2)} />
           {experiences?.length > 2 && (

@@ -20,7 +20,7 @@ const App = () => {
   const userMeta = {
     fullName: "Shubham Bhagwan Salunkhe",
     designation: "Frontend Developer",
-    experienceYears: ${calculateYearsFrom(journeyStartDate)},
+    experienceYears: ${Math.round(calculateYearsFrom(journeyStartDate))},
     isEngineer: true,
     salary: undefined,
     skills: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React", "Git"]
