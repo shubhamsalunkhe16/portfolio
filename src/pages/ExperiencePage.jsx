@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "../components/Layout";
 import Experience from "../components/Experience";
 import userMeta from "../constants/userMeta";

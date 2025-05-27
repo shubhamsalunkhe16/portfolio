@@ -1,11 +1,15 @@
 import { ChevronRight } from "lucide-react";
-import React from "react";
 import Chip from "./Chip";
 
 const ResourceCard = ({ title, description, tags, link }) => {
   return (
     <div key={title} className="border border-text-primary rounded-md p-4">
-      <h3 className="heading-xl mb-2">{title}</h3>
+      <h3
+        className="heading-xl mb-2 hover:text-primary hover:underline cursor-pointer readDocLink"
+        data-link={link}
+      >
+        {title}
+      </h3>
       <p className="para-sm">{description}</p>
       <div className="flex gap-2 my-3 flex-wrap">
         {tags?.map((tag) => (
@@ -14,7 +18,7 @@ const ResourceCard = ({ title, description, tags, link }) => {
       </div>
       <button
         data-link={link}
-        className="inline-flex items-center text-primary para-md cursor-pointer readDocBtn"
+        className="inline-flex items-center text-primary para-md cursor-pointer readDocLink"
       >
         Read the doc
         <ChevronRight className="text-primary" />

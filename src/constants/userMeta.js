@@ -9,20 +9,22 @@ const userMeta = {
     {
       authorTitle: "Team Lead",
       authorSubtitle: "Gophygital",
-      gender: "F",
+      authorSrc: "https://randomuser.me/api/portraits/women/91.jpg",
+      // comment:
+      //   "Shubham has delivered exceptional work, learns quickly, and has strong problem-solving skills. His contribution to Musically, has been highly valuable. He is always helpful, often supporting teammates even when occupied with his own work. He is enthusiastic about learning new technologies and is enjoying his current project. He takes ownership of tasks and works independently when needed. Focusing on stability, consistency, and deepening his core knowledge will strengthen his overall development and impact within the team. Shubham, overall has been a very good asset to company. He has shown great improvements in all aspects be it, adapting to new technologies, understaning new libraries, new code logics, self testing of code, finding solutions to problems and more. He has done outstanding work in the Musicbank and Creation station. Also shown quick outputs in all Al related functionalities added to project. He is very responsible and constantly improving himself. He keeps on upgrading code to improve code performance and make the code more dynamic, easily understandable. Very quick learner, very good teammate, dedicated, always ready to help team members. Always eager to learn new things. One of the most reliable assets of the company. Like working with him as he can quickly understands the points and can have great discussion with him related to work functionalities. All in all it's great to work with him.",
       comment:
-        "Shubham has delivered exceptional work, learns quickly, and has strong problem-solving skills. His contribution to Musically, has been highly valuable. He is always helpful, often supporting teammates even when occupied with his own work. He is enthusiastic about learning new technologies and is enjoying his current project. He takes ownership of tasks and works independently when needed. To grow further, he should avoid making hasty decisions and aim for a healthy balance between financial satisfaction and his own work satisfaction. At times, he gets influenced by external factors, which may lead to impulsive choices. Focusing on stability, consistency, and deepening his core knowledge will strengthen his overall development and impact within the team.",
+        "Shubham, overall has been a very good asset to company. He has shown great improvements in all aspects be it, adapting to new technologies, understaning new libraries, new code logics, self testing of code, finding solutions to problems and more. He has done outstanding work in the Musicbank and Creation station. Also shown quick outputs in all Al related functionalities added to project. He is very responsible and constantly improving himself. He keeps on upgrading code to improve code performance and make the code more dynamic, easily understandable. Very quick learner, very good teammate, dedicated, always ready to help team members. Always eager to learn new things. One of the most reliable assets of the company. Like working with him as he can quickly understands the points and can have great discussion with him related to work functionalities. All in all it's great to work with him.",
     },
     {
       authorTitle: "Founder and Evangelist",
+      authorSrc: "https://randomuser.me/api/portraits/men/91.jpg",
       authorSubtitle: "Gophygital",
-      gender: "M",
       comment: "Keep doing great work.",
     },
     {
       authorTitle: "Human Resources Manager",
       authorSubtitle: "Gophygital",
-      gender: "F",
+      authorSrc: "https://randomuser.me/api/portraits/women/92.jpg",
       comment:
         "Shubham has consistently demonstrated exceptional performance throughout the period. He is proactive and self-motivated individual who shows a strong commitment to continuous self-development. His positive attitude, collaborative nature, and willingness to support team members in achieving common goals have made a significant impact on team morale and productivity.",
     },

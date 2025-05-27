@@ -1,4 +1,3 @@
-import React from "react";
 import SectionHeader from "./SectionHeader";
 import userMeta from "../constants/userMeta";
 import calculateYearsFrom from "../utils/calculateYearsFrom";

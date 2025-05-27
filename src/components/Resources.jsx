@@ -1,10 +1,9 @@
-import React from "react";
 import SectionHeader from "./SectionHeader";
 import ResourceCard from "./ResourceCard";
 
 const Resources = ({ resources }) => {
   const handleClick = (event) => {
-    if (event.target && event.target.classList.contains("readDocBtn")) {
+    if (event.target && event.target.classList.contains("readDocLink")) {
       const resourceLink = event.target.getAttribute("data-link");
       window.open(resourceLink, "_blank");
     }

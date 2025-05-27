@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import navConstants from "../constants/navConstants";
 import ThemeBtn from "./ThemeBtn";
 import { Menu, X } from "lucide-react";

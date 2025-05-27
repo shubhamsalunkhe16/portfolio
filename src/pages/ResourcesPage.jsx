@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import Layout from "../components/Layout";
 import resources from "../constants/resources";
 import "./ResourcesPage.css";
@@ -71,7 +71,7 @@ const ResourcesPage = () => {
   };
 
   const handleClick = (event) => {
-    if (event.target && event.target.classList.contains("readDocBtn")) {
+    if (event.target && event.target.classList.contains("readDocLink")) {
       const resourceLink = event.target.getAttribute("data-link");
       window.open(resourceLink, "_blank");
     }

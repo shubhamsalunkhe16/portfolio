@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "../components/Layout";
 import { useNavigate, useParams } from "react-router-dom";
 import articles from "../constants/articles";

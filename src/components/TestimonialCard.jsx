@@ -17,11 +17,11 @@ const TestimonialCard = ({ testimonial }) => {
       <div className="relative z-10">
         <div className="flex items-center">
           {/* <img
-            src="https://randomuser.me/api/portraits/women/91.jpg"
+            src={testimonial?.authorSrc}
             alt="Avatar"
             className="w-12 h-12 rounded-full mr-4 border-2 border-purple-300"
           /> */}
-          <CircleUserRound className="w-12 h-12 rounded-full mr-4" />
+          <CircleUserRound className="w-12 h-12 rounded-full mr-4 text-white" />
           <div>
             <h4 className="para-md font-semibold text-white">
               {testimonial?.authorTitle}
@@ -37,7 +37,7 @@ const TestimonialCard = ({ testimonial }) => {
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
         </svg>
         <p className="para-md mt-4 text-white">
-          "{displayedComment}"
+          {displayedComment}
           {isLong && (
             <span
               onClick={toggleReadMore}

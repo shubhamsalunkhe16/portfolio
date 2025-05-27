@@ -1,8 +1,8 @@
-import React from "react";
 import { Linkedin, Github, Instagram } from "lucide-react";
 import userMeta from "../constants/userMeta";
 import openLink from "../utils/openLink";
 import { Link } from "react-router-dom";
+import navConstants from "../constants/navConstants";
 
 const Footer = () => {
   const { socialLinks } = userMeta;
@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="text-center border-t-2 border-text-secondary py-6 px-2 bg-bg-card">
       <h1 className="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900">
         <Link
-          to="hero_section"
+          to={navConstants.HOME}
           className="heading-3xl highlight flex gap-2 items-center cursor-pointer"
         >
           &lt;shubh/&gt;
@@ -40,7 +40,6 @@ const Footer = () => {
         </li>
         <li>
           <button
-            href="#"
             className="text-text-secondary hover:text-primary"
             onClick={() => openLink(socialLinks.github)}
           >
@@ -49,7 +48,6 @@ const Footer = () => {
         </li>
         <li>
           <button
-            href="#"
             className="text-text-secondary hover:text-primary"
             onClick={() => openLink(socialLinks.instagram)}
           >

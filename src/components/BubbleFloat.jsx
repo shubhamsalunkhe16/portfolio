@@ -1,4 +1,3 @@
-import React from "react";
 import "./BubbleFloat.css";
 import { Linkedin, PhoneCall, MailIcon, MapPin } from "lucide-react";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Linkedin, PhoneCall, MailIcon, MapPin } from "lucide-react";
 import userMeta from "../constants/userMeta";
 import openLink from "../utils/openLink";

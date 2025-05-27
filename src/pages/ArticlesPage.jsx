@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import Layout from "../components/Layout";
 import articles from "../constants/articles";
 import SectionHeader from "../components/SectionHeader";
@@ -34,7 +34,7 @@ const ArticlesPage = () => {
   };
 
   const handleClick = (event) => {
-    if (event.target && event.target.classList.contains("readMoreBtn")) {
+    if (event.target && event.target.classList.contains("readMoreLink")) {
       const articleId = event.target.getAttribute("data-id");
       navigate(`${navConstants.ARTICLES}/${articleId}`);
     }

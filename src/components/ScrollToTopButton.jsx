@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { throttle } from "lodash";
 import { ArrowUpLeft } from "lucide-react";
 
