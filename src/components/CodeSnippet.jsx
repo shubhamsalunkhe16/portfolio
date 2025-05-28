@@ -19,15 +19,16 @@ const CodeSnippet = () => {
 const App = () => {
   const userMeta = {
     fullName: "Shubham Bhagwan Salunkhe",
-    designation: "Frontend Developer",
+    designation: "Full Stack Developer",
     experienceYears: ${Math.round(calculateYearsFrom(journeyStartDate))},
     isEngineer: true,
     salary: undefined,
-    skills: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React", "Git"]
+    skills: ["React", "Redux", "Next.js", "Express.js", "Tailwind CSS" , "Responsive UI", "Scalable Architecture", "Mentorship"]
     experience: [
-      "Senior Frontend Developer at GoPhygital Private Limited.",
-      "AI-Based Content Creation Platform for top-tier clients.",
-      "Developed Music Streaming Platform."
+      "Led development of AI-Based Content Creation Platform for global brands.",
+      "Built full-stack RAG-based Social Media Scraper & Analyzer.",
+      "Developed Web-Based Music Streaming Platform with advanced features.",
+      "Contributed to React Native educational mobile app."
     ],
   };
 

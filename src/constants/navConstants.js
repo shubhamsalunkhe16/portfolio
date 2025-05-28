@@ -9,7 +9,7 @@ const navConstants = {
   get NAVLINKS() {
     return [
       { label: "Home", path: this.HOME },
-      { label: "Experience", path: this.EXPERIENCE },
+      { label: "Work Experience", path: this.EXPERIENCE },
       { label: "Personal Projects", path: this.PROJECTS },
       { label: "Articles", path: this.ARTICLES },
       { label: "Resources", path: this.RESOURCES },

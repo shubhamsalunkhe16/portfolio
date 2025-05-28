@@ -7,6 +7,7 @@ import {
 import { ThemeContext } from "../context/ThemeContext";
 import { BookOpenText, CalendarDays, Navigation2 } from "lucide-react";
 import calculateReadingTime from "../utils/calculateReadingTime";
+import ReactMarkdown from "react-markdown";
 
 const RenderContentList = ({ content }) => {
   return (
@@ -17,7 +18,9 @@ const RenderContentList = ({ content }) => {
             <Navigation2 className="h-5 w-5 fill-primary text-primary rotate-90" />
             <p className="heading-md">{step?.point}:</p>
           </dt>
-          <dd className="para-md mb-4">{step?.details}</dd>
+          <dd className="para-md mb-4">
+            <ReactMarkdown>{step?.details}</ReactMarkdown>
+          </dd>
         </dl>
       ))}
     </div>
@@ -52,7 +55,9 @@ const ArticleDetail = ({ article }) => {
           {Array.isArray(section.content) ? (
             <RenderContentList content={section.content} />
           ) : (
-            <p className="para-md my-2">{section.content}</p>
+            <p className="para-md my-2">
+              <ReactMarkdown>{section.content}</ReactMarkdown>
+            </p>
           )}
 
           {section.code && (

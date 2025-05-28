@@ -25,7 +25,7 @@ const articles = [
       {
         heading: "Adding a Predefined Function: makeLatteCoffee",
         content:
-          "We can use currying to create specialized functions like `makeLatteCoffee`, which simplifies ordering Latte with default options.",
+          "We can use currying to create specialized functions like **makeLatteCoffee**, which simplifies ordering Latte with default options.",
         code: "const makeLatteCoffee = makeCoffee('Latte');\nconst latteOrder = makeLatteCoffee('Medium')('No Sugar');\nconsole.log(latteOrder); // Output: Medium Latte with No Sugar\n\n// One-liner version\nconst makeLatteCoffeeOneLiner = (size) => (extra) => `Medium Latte with ${extra}`;\nconst latteOrderOneLiner = makeLatteCoffeeOneLiner('Medium')('No Sugar');\nconsole.log(latteOrderOneLiner); // Output: Medium Latte with No Sugar",
       },
       {
@@ -63,24 +63,24 @@ const articles = [
         heading: "Step-by-Step Explanation",
         content: [
           {
-            point: "Outer Function (`createAccount`)",
+            point: "Outer Function (createAccount)",
             details:
-              "The outer function accepts an `initialBalance` argument and initializes a `balance` variable to store the account balance.",
+              "The outer function accepts an **initialBalance** argument and initializes a **balance** variable to store the account balance.",
           },
           {
             point: "Inner Function",
             details:
-              "The inner function takes two arguments: `action` (which can be 'deposit', 'withdraw', or 'checkBalance') and `amount`. Depending on the `action`, it performs the corresponding operation on the `balance`. The inner function has access to the `balance` variable because of the closure, which means it retains access to the outer function's variables even after the outer function finishes execution.",
+              "The inner function takes two arguments: **action** (which can be **deposit**, **withdraw**, or **checkBalance**) and **amount**. Depending on the **action**, it performs the corresponding operation on the **balance**. The inner function has access to the **balance** variable because of the closure, which means it retains access to the outer function's variables even after the outer function finishes execution.",
           },
           {
             point: "Action Handling",
             details:
-              "The inner function handles three actions: \n- **'deposit'**: Increases the balance by the specified amount.\n- **'withdraw'**: Decreases the balance by the specified amount if there are sufficient funds; otherwise, it logs 'Insufficient funds'.\n- **'checkBalance'**: Logs the current balance to the console.",
+              "The inner function handles three actions: \n- **deposit**: Increases the balance by the specified amount.\n- **withdraw**: Decreases the balance by the specified amount if there are sufficient funds; otherwise, it logs 'Insufficient funds'.\n- **checkBalance**: Logs the current balance to the console.",
           },
           {
             point: "Reusability",
             details:
-              "You can create multiple instances of bank accounts with their own isolated `balance`. Each account operates independently, allowing you to perform actions such as deposit, withdraw, and check balance for each one separately.",
+              "You can create multiple instances of bank accounts with their own isolated **balance**. Each account operates independently, allowing you to perform actions such as deposit, withdraw, and check balance for each one separately.",
           },
         ],
       },
@@ -104,7 +104,7 @@ const articles = [
           {
             point: "Avoid Callback Hell",
             details:
-              "Promises provide a way to handle asynchronous code in a cleaner and more understandable manner. Instead of nesting callbacks, Promises can chain `.then()` and `.catch()` to handle success and error responses.",
+              "Promises provide a way to handle asynchronous code in a cleaner and more understandable manner. Instead of nesting callbacks, Promises can chain **.then()** and **.catch()** to handle success and error responses.",
           },
           {
             point: "Improved Readability",
@@ -114,7 +114,7 @@ const articles = [
           {
             point: "Better Error Handling",
             details:
-              "Promises allow for proper error handling using `.catch()` which is much easier than dealing with error-prone callback chains.",
+              "Promises allow for proper error handling using **.catch()** which is much easier than dealing with error-prone callback chains.",
           },
         ],
       },
@@ -124,17 +124,17 @@ const articles = [
           {
             point: "Pending",
             details:
-              "In the pizza delivery example, the promise starts in the 'pending' state. This state indicates that the asynchronous operation, which is the pizza delivery, is still in progress. The promise is waiting for the result—whether the pizza will be delivered successfully or not.",
+              "In the pizza delivery example, the promise starts in the **pending** state. This state indicates that the asynchronous operation, which is the pizza delivery, is still in progress. The promise is waiting for the result—whether the pizza will be delivered successfully or not.",
           },
           {
             point: "Fulfilled",
             details:
-              "If the pizza is delivered successfully (simulated by setting `pizzaReady = true`), the promise enters the 'fulfilled' state. The resolve function is called, and the message 'Pizza delivered!' is returned. This state represents that the operation was completed successfully.",
+              "If the pizza is delivered successfully (simulated by setting **pizzaReady = true**), the promise enters the **fulfilled** state. The resolve function is called, and the message **Pizza delivered!** is returned. This state represents that the operation was completed successfully.",
           },
           {
             point: "Rejected",
             details:
-              "If the pizza is not delivered successfully (simulated by setting `pizzaReady = false`), the promise enters the 'rejected' state. The reject function is called, and the message 'Sorry, pizza is not ready yet.' is returned. This state represents that the operation failed.",
+              "If the pizza is not delivered successfully (simulated by setting **pizzaReady = false**), the promise enters the **rejected** state. The reject function is called, and the message **Sorry, pizza is not ready yet.** is returned. This state represents that the operation failed.",
           },
         ],
       },
@@ -153,17 +153,17 @@ const articles = [
           {
             point: "Creating the Promise",
             details:
-              "We create a new Promise using the `new Promise()` constructor. The promise takes a function with two arguments: `resolve` and `reject`. This function represents the asynchronous operation, which in our case is pizza delivery.",
+              "We create a new Promise using the **new Promise()** constructor. The promise takes a function with two arguments: **resolve** and **reject**. This function represents the asynchronous operation, which in our case is pizza delivery.",
           },
           {
             point: "Simulating Pizza Delivery",
             details:
-              "We simulate whether the pizza is ready using a boolean variable `pizzaReady`. Using `setTimeout()`, we mimic a delivery time of 2 seconds. If the pizza is ready, we call `resolve()` to indicate the operation was successful. If not, we call `reject()`.",
+              "We simulate whether the pizza is ready using a boolean variable **pizzaReady**. Using **setTimeout()**, we mimic a delivery time of 2 seconds. If the pizza is ready, we call **resolve()** to indicate the operation was successful. If not, we call **reject()**.",
           },
           {
             point: "Handling Promise Outcome",
             details:
-              "After creating the promise, we handle its result by chaining `.then()` and `.catch()` methods. If the promise is resolved, we log the success message. If it is rejected, we log the error message.",
+              "After creating the promise, we handle its result by chaining **.then()** and **.catch()** methods. If the promise is resolved, we log the success message. If it is rejected, we log the error message.",
           },
         ],
       },
@@ -216,17 +216,17 @@ const articles = [
           {
             point: "Handling Form Submit",
             details:
-              "When the form is submitted, we capture the event, prevent the default form behavior, and add the new task to the `tasks` array in the state.",
+              "When the form is submitted, we capture the event, prevent the default form behavior, and add the new task to the **tasks** array in the state.",
           },
           {
             point: "Handling Task Deletion with Event Delegation",
             details:
-              "The `handleTaskClick` function is attached to the `ul` (parent element). This allows us to listen for clicks on the `delete` button of any task. If a delete button is clicked, we retrieve its `data-index` attribute to find the task index, then remove that task from the list.",
+              "The **handleTaskClick** function is attached to the **ul** (parent element). This allows us to listen for clicks on the **delete** button of any task. If a delete button is clicked, we retrieve its **data-index** attribute to find the task index, then remove that task from the list.",
           },
           {
             point: "Efficient Task Management",
             details:
-              "By delegating the delete event to the `ul` element, we avoid having to attach a separate event listener to each delete button. This centralizes the event handling and simplifies the code.",
+              "By delegating the delete event to the **ul** element, we avoid having to attach a separate event listener to each delete button. This centralizes the event handling and simplifies the code.",
           },
           {
             point: "Event Delegation in React",
@@ -255,7 +255,7 @@ const articles = [
           {
             point: "Control the Context of this",
             details:
-              "These methods allow you to control which object the function is executed in, by specifying a specific `this` value. This is particularly useful when dealing with object methods.",
+              "These methods allow you to control which object the function is executed in, by specifying a specific **this** value. This is particularly useful when dealing with object methods.",
           },
           {
             point: "Borrow Methods from Other Objects",
@@ -330,7 +330,7 @@ const articles = [
       {
         heading: "What is Temporal Dead Zone (TDZ)?",
         content:
-          "The Temporal Dead Zone (TDZ) refers to the time between the entering of the scope and the variable declaration where the variable cannot be accessed. This happens for variables declared with `let` and `const`.",
+          "The Temporal Dead Zone (TDZ) refers to the time between the entering of the scope and the variable declaration where the variable cannot be accessed. This happens for variables declared with **let** and **const**.",
       },
       {
         heading:
@@ -346,14 +346,14 @@ const articles = [
         heading: "Step-by-Step Explanation",
         content: [
           {
-            point: "Using `var` (Hoisting with Initialization)",
+            point: "Using **var** (Hoisting with Initialization)",
             details:
-              "With `var`, the declaration is hoisted but the initialization stays in place. As a result, the variable is available before its initialization but will have the value `undefined`.",
+              "With **var**, the declaration is hoisted but the initialization stays in place. As a result, the variable is available before its initialization but will have the value **undefined**.",
           },
           {
-            point: "Using `let` and `const` (TDZ)",
+            point: "Using **let** and **const** (TDZ)",
             details:
-              "With `let` and `const`, the variable is hoisted but cannot be accessed before its declaration line. If accessed before, it will result in a ReferenceError due to the Temporal Dead Zone (TDZ).",
+              "With **let** and **const**, the variable is hoisted but cannot be accessed before its declaration line. If accessed before, it will result in a ReferenceError due to the Temporal Dead Zone (TDZ).",
           },
           {
             point: "Function Hoisting",

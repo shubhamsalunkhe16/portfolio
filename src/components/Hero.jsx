@@ -1,4 +1,3 @@
-import React from "react";
 import CodeSnippet from "./CodeSnippet";
 import Button from "./Button";
 import userMeta from "../constants/userMeta";
@@ -27,14 +26,24 @@ const Hero = () => {
             Math.round(calculateYearsFrom(journeyStartDate))
           )}
         </p>
-        <Button
-          className="mt-2"
-          onClick={() =>
-            DownloadPDF("/shubham_salunkhe.pdf", "shubham_salunkhe.pdf")
-          }
-        >
-          Download CV
-        </Button>
+        <div className="flex gap-1 flex-col [@media(min-width:350px)]:flex-row [@media(min-width:350px)]:gap-4">
+          <Button className="mt-2">
+            <a
+              href="https://drive.google.com/file/d/1G01m8NMaT0Qe16ROhbcZMWBW5BZVTKAP/view?usp=drive_link"
+              target="_blank"
+            >
+              Preview CV
+            </a>
+          </Button>
+          <Button
+            className="mt-2"
+            onClick={() =>
+              DownloadPDF("/shubham_salunkhe.pdf", "shubham_salunkhe.pdf")
+            }
+          >
+            Download CV
+          </Button>
+        </div>
       </div>
       <div className="flex-[1.25] overflow-x-auto w-full">
         <CodeSnippet />

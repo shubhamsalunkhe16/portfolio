@@ -5,7 +5,7 @@ const ResourceCard = ({ title, description, tags, link }) => {
   return (
     <div key={title} className="border border-text-primary rounded-md p-4">
       <h3
-        className="heading-xl mb-2 hover:text-primary hover:underline cursor-pointer readDocLink"
+        className="heading-xl mb-2 hover:text-primary hover:underline cursor-pointer readDocLink w-fit"
         data-link={link}
       >
         {title}

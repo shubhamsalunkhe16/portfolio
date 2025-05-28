@@ -29,7 +29,7 @@ const Projects = ({ projects }) => {
               className="w-full first:pt-0 last:pb-0 pb-8 pt-6"
             >
               <h2
-                className="heading-4xl hover:text-primary hover:underline cursor-pointer"
+                className="heading-4xl hover:text-primary hover:underline cursor-pointer w-fit"
                 onClick={() => openLink(link)}
               >
                 {title}

@@ -19,7 +19,7 @@ const Navbar = () => {
           &lt;shubh/&gt;
         </Link>
       </div>
-      <div className="hidden [@media(min-width:950px)]:flex justify-between items-center gap-12">
+      <div className="hidden [@media(min-width:950px)]:flex justify-between items-center gap-10">
         {navlinks?.map(({ label, path }) => (
           <NavLink
             key={label}

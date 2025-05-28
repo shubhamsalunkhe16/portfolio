@@ -1,6 +1,7 @@
 import SectionHeader from "./SectionHeader";
 import userMeta from "../constants/userMeta";
 import calculateYearsFrom from "../utils/calculateYearsFrom";
+import ReactMarkdown from "react-markdown";
 
 const MyStory = () => {
   const { myStory, journeyStartDate } = userMeta;
@@ -17,10 +18,12 @@ const MyStory = () => {
         </div>
         <div className="flex-[3]">
           <p className="text-sm md:text-base my-4 text-center min-[950px]:text-left">
-            {myStory?.replace(
-              "[experienceYears]",
-              Math.round(calculateYearsFrom(journeyStartDate))
-            )}
+            <ReactMarkdown>
+              {myStory?.replace(
+                "[experienceYears]",
+                Math.round(calculateYearsFrom(journeyStartDate))
+              )}
+            </ReactMarkdown>
           </p>
         </div>
       </div>

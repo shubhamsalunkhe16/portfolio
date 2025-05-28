@@ -15,13 +15,16 @@ const TestimonialCard = ({ testimonial }) => {
     <div className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl shadow-2xl p-8 text-text-primary h-full">
       <div className="absolute top-0 left-0 w-full h-full bg-bg-card opacity-10 transform -skew-x-12"></div>
       <div className="relative z-10">
-        <div className="flex items-center">
+        <div className="flex items-center gap-3">
           {/* <img
             src={testimonial?.authorSrc}
             alt="Avatar"
             className="w-12 h-12 rounded-full mr-4 border-2 border-purple-300"
           /> */}
-          <CircleUserRound className="w-12 h-12 rounded-full mr-4 text-white" />
+          <CircleUserRound
+            className="w-12 h-12 rounded-full text-white"
+            strokeWidth={1.2}
+          />
           <div>
             <h4 className="para-md font-semibold text-white">
               {testimonial?.authorTitle}
@@ -30,7 +33,7 @@ const TestimonialCard = ({ testimonial }) => {
           </div>
         </div>
         <svg
-          className="w-12 h-12 mt-4 text-purple-300"
+          className="w-12 h-12 mt-4 text-white"
           fill="currentColor"
           viewBox="0 0 24 24"
         >

@@ -14,6 +14,7 @@ import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import navConstants from "../constants/navConstants";
 import Testimonials from "../components/Testimonials";
+import { useMemo } from "react";
 
 const HomePage = () => {
   const { experiences, projects } = userMeta;
@@ -27,6 +28,15 @@ const HomePage = () => {
     }
   };
 
+  const recentExperiences = useMemo(
+    () => [
+      ...experiences
+        ?.slice(0, 2)
+        ?.map((data) => ({ ...data, projects: data?.projects?.slice(0, 2) })),
+    ],
+    [experiences]
+  );
+
   return (
     <Layout>
       <div className="grid grid-cols-1 gap-10 divide-y divide-text-primary pt-4 pb-8">
@@ -35,7 +45,7 @@ const HomePage = () => {
         <Skills />
         <Testimonials />
         <section>
-          <Experience experiences={experiences?.slice(0, 2)} />
+          <Experience experiences={recentExperiences} />
           {experiences?.length > 2 && (
             <div className="w-full mx-auto mt-8 text-center">
               <Button

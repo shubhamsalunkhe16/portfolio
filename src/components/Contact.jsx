@@ -19,7 +19,7 @@ const Contact = () => {
           </div>
           <div>
             <dt className="heading-xl">Email</dt>
-            <dd className="para-md text-text-secondary hover:text-primary break-all">
+            <dd className="para-md text-text-secondary hover:text-primary hover:underline break-all">
               <a href="mailto:salunkheshubham0@gmail.com">
                 salunkheshubham0@gmail.com
               </a>
@@ -34,7 +34,7 @@ const Contact = () => {
           </div>
           <div className="ml-4">
             <dt className="heading-xl">Phone number</dt>
-            <dd className="para-md text-text-secondary hover:text-primary break-all">
+            <dd className="para-md text-text-secondary hover:text-primary hover:underline break-all">
               <a href="tel:+919004409190">9004409190</a>
             </dd>
           </div>
@@ -50,7 +50,7 @@ const Contact = () => {
             <dt className="heading-xl">LinkedIn</dt>
             <dd className="text-base text-text-secondary">
               <p
-                className="para-md text-text-secondary hover:text-primary break-all"
+                className="para-md text-text-secondary hover:text-primary hover:underline break-all"
                 onClick={() => openLink(socialLinks.linkedin)}
               >
                 linkedin.com/in/shubhamsalunkhe16/
