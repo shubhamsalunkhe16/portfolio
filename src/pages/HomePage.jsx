@@ -46,16 +46,16 @@ const HomePage = () => {
         <Testimonials />
         <section>
           <Experience experiences={recentExperiences} />
-          {experiences?.length > 2 && (
-            <div className="w-full mx-auto mt-8 text-center">
-              <Button
-                data-section={navConstants.EXPERIENCE}
-                onClick={handleSeeMoreClick}
-              >
-                See More
-              </Button>
-            </div>
-          )}
+          {/* {experiences?.length > 2 && ( */}
+          <div className="w-full mx-auto mt-8 text-center">
+            <Button
+              data-section={navConstants.EXPERIENCE}
+              onClick={handleSeeMoreClick}
+            >
+              See More
+            </Button>
+          </div>
+          {/* )} */}
         </section>
         <section>
           <Projects projects={projects?.slice(0, 2)} />

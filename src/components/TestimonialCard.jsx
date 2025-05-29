@@ -3,7 +3,7 @@ import { CircleUserRound } from "lucide-react";
 
 const TestimonialCard = ({ testimonial }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const maxLength = 1000;
+  const maxLength = 900;
 
   const toggleReadMore = () => setIsExpanded(!isExpanded);
 
