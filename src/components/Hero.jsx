@@ -5,7 +5,13 @@ import DownloadPDF from "../utils/DownloadPDF";
 import calculateYearsFrom from "../utils/calculateYearsFrom";
 
 const Hero = () => {
-  const { name, summary, journeyStartDate } = userMeta;
+  const {
+    gradientText,
+    summary,
+    journeyStartDate,
+    previewCVUrl,
+    downloadCVUrl,
+  } = userMeta;
 
   return (
     <section
@@ -18,7 +24,7 @@ const Hero = () => {
           Hi, I'm
         </h1>
         <h1 className="xl:text-7xl lg:text-6xl md:text-5xl text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E]">
-          {name}
+          {gradientText}
         </h1>
         <p className="text-sm md:text-base my-4 text-center min-[950px]:text-left">
           {summary?.replace(
@@ -28,20 +34,14 @@ const Hero = () => {
         </p>
         <div className="flex gap-1 flex-col [@media(min-width:350px)]:flex-row [@media(min-width:350px)]:gap-4">
           <Button className="mt-2">
-            <a
-              href="https://drive.google.com/file/d/1G01m8NMaT0Qe16ROhbcZMWBW5BZVTKAP/view?usp=drive_link"
-              target="_blank"
-            >
+            <a href={previewCVUrl} target="_blank">
               Preview CV
             </a>
           </Button>
-          <Button
-            className="mt-2"
-            onClick={() =>
-              DownloadPDF("/shubham_salunkhe.pdf", "shubham_salunkhe.pdf")
-            }
-          >
-            Download CV
+          <Button className="mt-2">
+            <a href={downloadCVUrl} download target="_blank">
+              Download CV
+            </a>
           </Button>
         </div>
       </div>

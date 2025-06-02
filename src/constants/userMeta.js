@@ -1,7 +1,11 @@
 const userMeta = {
-  name: "Shubham",
+  gradientText: "Shubham",
   summary:
-    "a passionate and results-driven Full Stack Developer with [experienceYears]+ years of hands on experience crafting dynamic, responsive, and scalable web applications. I specialize in building end-to-end solutions from sleek frontends to robust backend systems across industries. Skilled in React, Node.js and SQL/NoSQL, I thrive in fast-paced environments leading teams, solving problems, and delivering impactful digital solutions.",
+    "Full Stack Developer with [experienceYears]+ years of experience building responsive, scalable and AI-driven web applications. Skilled in React, backend technologies, and performance optimization. Delivered solutions for top-tier brands. Passionate about clean code, collaboration, and continuous learning, transforming real world challenges into impactful digital products.",
+  previewCVUrl:
+    "https://drive.google.com/file/d/1zoeHLHZVsqMYujH5T8SZyAjtTh08Es_j/view?usp=sharing",
+  downloadCVUrl:
+    "https://drive.google.com/uc?export=download&id=1zoeHLHZVsqMYujH5T8SZyAjtTh08Es_j",
   journeyStartDate: "2021-09-13",
   myStory:
     "I’m Shubham Bhagwan Salunkhe, a dedicated **Full Stack Developer** with over **[experienceYears]+ years of experience** in **building innovative, scalable, responsive and user-centered web applications**. After graduating with a **Bachelor of Engineering in 2019**, I’ve honed my skills in **frontend technologies** and have good understanding of **backend architectures and database management**. At GoPhygital, I’ve contributed significantly to the development of AI-driven platforms for global brands like **Mastercard, Mercedes-Benz, Vodafone, Shell and many more**, with a focus on cutting-edge features like **text-to-speech** functionality, real-time **content creation tools**, **web streaming platform** and **social media analytics**. My passion for coding is matched by my commitment to team collaboration, having successfully **mentored colleagues** and **streamlined development processes**. Whether developing custom ECommerce solutions or creating dynamic, interactive user interfaces, I am always driven by the goal to build seamless, efficient, and impactful digital experiences. I believe in **continuous learning** and strive to **deliver high-quality solutions** that address real-world challenges.",
@@ -10,8 +14,6 @@ const userMeta = {
       authorTitle: "Team Lead",
       authorSubtitle: "Gophygital",
       authorSrc: "https://randomuser.me/api/portraits/women/91.jpg",
-      // comment:
-      //   "Shubham has delivered exceptional work, learns quickly, and has strong problem-solving skills. His contribution to Musically, has been highly valuable. He is always helpful, often supporting teammates even when occupied with his own work. He is enthusiastic about learning new technologies and is enjoying his current project. He takes ownership of tasks and works independently when needed. Focusing on stability, consistency, and deepening his core knowledge will strengthen his overall development and impact within the team. Shubham, overall has been a very good asset to company. He has shown great improvements in all aspects be it, adapting to new technologies, understaning new libraries, new code logics, self testing of code, finding solutions to problems and more. He has done outstanding work in the Musicbank and Creation station. Also shown quick outputs in all Al related functionalities added to project. He is very responsible and constantly improving himself. He keeps on upgrading code to improve code performance and make the code more dynamic, easily understandable. Very quick learner, very good teammate, dedicated, always ready to help team members. Always eager to learn new things. One of the most reliable assets of the company. Like working with him as he can quickly understands the points and can have great discussion with him related to work functionalities. All in all it's great to work with him.",
       comment:
         "Shubham, overall has been a very good asset to company. He has shown great improvements in all aspects be it, adapting to new technologies, understaning new libraries, new code logics, self testing of code, finding solutions to problems and more. He has done outstanding work in the Musicbank and Creation station. Also shown quick outputs in all Al related functionalities added to project. He takes ownership of tasks and works independently when needed. Focusing on stability, consistency, and deepening his core knowledge will strengthen his overall development and impact within the team. He keeps on upgrading code to improve code performance and make the code more dynamic, easily understandable. Very quick learner, very good teammate, dedicated, always ready to help team members. Always eager to learn new things. One of the most reliable assets of the company. Like working with him as he can quickly understands the points and can have great discussion with him related to work functionalities. All in all it's great to work with him.",
     },
@@ -40,13 +42,13 @@ const userMeta = {
           imageArr: ["images/creation-station.png"],
           description: [
             "Designed and developed an AI-driven content creation platform for top-tier clients such as Mastercard, Mercedes-Benz, Vodafone, and Shell.",
-            "Implemented advanced text-to-speech functionality with 1800+ voice profiles, including offensive content detection and timeline-based voice placement for dynamic adjustments.",
+            "Implemented advanced text-to-speech functionality with 3k+ voice profiles, including offensive content detection and timeline-based voice placement for dynamic adjustments.",
             "Built AI-powered music tools enabling track creation, remixing, instrument edits, and precise drop placements.",
             "Leveraged OpenAI to generate dynamic track names, descriptions, and visually appealing cover images.",
             "Utilized FFmpeg for advanced merging audio/video files, applying custom fade effects, and executing track trimming.",
             "Played a leading role in the project, contributing 85% of the frontend development over two years.",
-            "Engineered a unified, scalable codebase supporting multi-brand theming, feature toggles, and localized components",
-            "Mentored teams, collaborated with backend developers on API design, and managed multiple high-impact projects",
+            "Engineered a unified, scalable codebase supporting multi-brand theming, feature toggles, and localized components.",
+            "Mentored teams, collaborated with backend developers on API design, and managed multiple high-impact projects.",
           ],
           keywords: [
             "Generative AI",
@@ -139,7 +141,7 @@ const userMeta = {
       githubLink: "",
       description: [
         "Progressive Web App (PWA): Installable as an app for a seamless, native-like experience.",
-        "Secure Authentication: Firebase Authentication for safe login and registration",
+        "Secure Authentication: Firebase Authentication for safe login and registration.",
         "Responsive Design: Optimized for all screen sizes and devices.",
         "Dynamic Theme: Toggle between dark and light modes for personalized browsing.",
         "Product and Collection Management: Display of products and collections with categorized views, showcasing New Arrivals and Best Sellers section.",
