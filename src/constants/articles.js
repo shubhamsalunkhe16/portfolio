@@ -1,93 +1,6 @@
 const articles = [
   {
     id: 1,
-    title: "Currying Explained with a Coffee Example",
-    description:
-      "Discover the concept of currying in JavaScript through a coffee-making analogy. Learn its benefits and how to implement it effectively for cleaner, reusable functions in your projects.",
-    date: "January 1, 2025",
-    sections: [
-      {
-        heading: "What is Currying?",
-        content:
-          "Currying is a functional programming technique that transforms a function with multiple arguments into a sequence of nested functions, each taking a single argument. This makes functions more reusable and composable.",
-      },
-      {
-        heading: "Why Use Currying?",
-        content:
-          "Currying makes your code more modular and allows you to partially apply arguments. This is particularly useful when you frequently use a function with some arguments fixed.",
-      },
-      {
-        heading: "Curried Coffee Example: Line-by-Line Breakdown",
-        content:
-          "Let's create a function to build a coffee order step by step using currying.",
-        code: "function makeCoffee(type) {\n  return function (size) {\n    return function (extra) {\n      return `${size} ${type} with ${extra}`;\n    };\n  };\n}\n\n// Using the curried function\nconst coffeeOrder = makeCoffee('Latte')('Large')('Extra Foam');\nconsole.log(coffeeOrder); // Output: Large Latte with Extra Foam",
-      },
-      {
-        heading: "Adding a Predefined Function: makeLatteCoffee",
-        content:
-          "We can use currying to create specialized functions like **makeLatteCoffee**, which simplifies ordering Latte with default options.",
-        code: "const makeLatteCoffee = makeCoffee('Latte');\nconst latteOrder = makeLatteCoffee('Medium')('No Sugar');\nconsole.log(latteOrder); // Output: Medium Latte with No Sugar\n\n// One-liner version\nconst makeLatteCoffeeOneLiner = (size) => (extra) => `Medium Latte with ${extra}`;\nconst latteOrderOneLiner = makeLatteCoffeeOneLiner('Medium')('No Sugar');\nconsole.log(latteOrderOneLiner); // Output: Medium Latte with No Sugar",
-      },
-      {
-        heading: "Real-Life Use Case: Filtering in React",
-        content:
-          "Currying can be used in React applications to create reusable filter functions for data rendering. For example, let's create a filter for products based on category and price range.",
-        code: "function filterProductsByCategory(category) {\n  return function (minPrice) {\n    return function (maxPrice) {\n      return function (products) {\n        return products.filter(\n          (product) =>\n            product.category === category &&\n            product.price >= minPrice &&\n            product.price <= maxPrice\n        );\n      };\n    };\n  };\n}\n\n// Example usage in a React component\nconst products = [\n  { id: 1, name: 'Laptop', category: 'Electronics', price: 1000 },\n  { id: 2, name: 'Phone', category: 'Electronics', price: 700 },\n  { id: 3, name: 'Shirt', category: 'Clothing', price: 50 }\n];\n\nconst filterElectronics = filterProductsByCategory('Electronics')(500)(1500);\nconst filteredProducts = filterElectronics(products);\nconsole.log(filteredProducts);\n/* Output:\n[\n  { id: 1, name: 'Laptop', category: 'Electronics', price: 1000 },\n  { id: 2, name: 'Phone', category: 'Electronics', price: 700 }\n]*/\n\n// One-liner version\nconst filterProductsByCategoryOneLiner = (category) => (minPrice) => (maxPrice) => (products) => products.filter((product) => product.category === category && product.price >= minPrice && product.price <= maxPrice);\nconst filterElectronicsOneLiner = filterProductsByCategoryOneLiner('Electronics')(500)(1500);\nconst filteredProductsOneLiner = filterElectronicsOneLiner(products);\nconsole.log(filteredProductsOneLiner);",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Closure Explained with a Bank Example",
-    description:
-      "Understand closures in JavaScript with a relatable bank example, demonstrating how functions retain access to variables in their scope, even after their parent function has executed.",
-    date: "January 6, 2025",
-    sections: [
-      {
-        heading: "What is a Closure?",
-        content:
-          "A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope. This allows the function to remember and access variables from its outer scope even after the outer function has finished execution.",
-      },
-      {
-        heading: "Why Use Closures?",
-        content:
-          "Closures are useful for data encapsulation, creating private variables, and maintaining state in a functional programming style. It allows functions to 'remember' data even after their parent scope has finished execution.",
-      },
-      {
-        heading: "Bank Example with Closure",
-        content:
-          "Let's create a bank account using closures. This example will demonstrate how closures can help in encapsulating account balance information and updating it securely.",
-        code: "function createAccount(initialBalance) {\n  let balance = initialBalance;\n  return function (action, amount) {\n    if (action === 'deposit') {\n      balance += amount;\n    } else if (action === 'withdraw') {\n      if (balance >= amount) {\n        balance -= amount;\n      } else {\n        console.log('Insufficient funds');\n      }\n    } else if (action === 'checkBalance') {\n      console.log('Balance:', balance);\n    }\n  };\n}\n\n// Creating a bank account\nconst myAccount = createAccount(1000);\nmyAccount('deposit', 500);  // Depositing 500\nmyAccount('checkBalance'); // Output: Balance: 1500\nmyAccount('withdraw', 200); // Withdrawing 200\nmyAccount('checkBalance'); // Output: Balance: 1300",
-      },
-      {
-        heading: "Step-by-Step Explanation",
-        content: [
-          {
-            point: "Outer Function (createAccount)",
-            details:
-              "The outer function accepts an **initialBalance** argument and initializes a **balance** variable to store the account balance.",
-          },
-          {
-            point: "Inner Function",
-            details:
-              "The inner function takes two arguments: **action** (which can be **deposit**, **withdraw**, or **checkBalance**) and **amount**. Depending on the **action**, it performs the corresponding operation on the **balance**. The inner function has access to the **balance** variable because of the closure, which means it retains access to the outer function's variables even after the outer function finishes execution.",
-          },
-          {
-            point: "Action Handling",
-            details:
-              "The inner function handles three actions: \n- **deposit**: Increases the balance by the specified amount.\n- **withdraw**: Decreases the balance by the specified amount if there are sufficient funds; otherwise, it logs 'Insufficient funds'.\n- **checkBalance**: Logs the current balance to the console.",
-          },
-          {
-            point: "Reusability",
-            details:
-              "You can create multiple instances of bank accounts with their own isolated **balance**. Each account operates independently, allowing you to perform actions such as deposit, withdraw, and check balance for each one separately.",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 3,
     title: "Promises in JavaScript with Pizza Delivery Example",
     description:
       "Learn JavaScript Promises with a relatable pizza delivery example, exploring pending, fulfilled, and rejected states. Understand asynchronous programming concepts and their real-world applications effectively.",
@@ -170,7 +83,187 @@ const articles = [
     ],
   },
   {
+    id: 2,
+    title: "Closure Explained with a Bank Example",
+    description:
+      "Understand closures in JavaScript with a relatable bank example, demonstrating how functions retain access to variables in their scope, even after their parent function has executed.",
+    date: "January 6, 2025",
+    sections: [
+      {
+        heading: "What is a Closure?",
+        content:
+          "A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope. This allows the function to remember and access variables from its outer scope even after the outer function has finished execution.",
+      },
+      {
+        heading: "Why Use Closures?",
+        content:
+          "Closures are useful for data encapsulation, creating private variables, and maintaining state in a functional programming style. It allows functions to 'remember' data even after their parent scope has finished execution.",
+      },
+      {
+        heading: "Bank Example with Closure",
+        content:
+          "Let's create a bank account using closures. This example will demonstrate how closures can help in encapsulating account balance information and updating it securely.",
+        code: "function createAccount(initialBalance) {\n  let balance = initialBalance;\n  return function (action, amount) {\n    if (action === 'deposit') {\n      balance += amount;\n    } else if (action === 'withdraw') {\n      if (balance >= amount) {\n        balance -= amount;\n      } else {\n        console.log('Insufficient funds');\n      }\n    } else if (action === 'checkBalance') {\n      console.log('Balance:', balance);\n    }\n  };\n}\n\n// Creating a bank account\nconst myAccount = createAccount(1000);\nmyAccount('deposit', 500);  // Depositing 500\nmyAccount('checkBalance'); // Output: Balance: 1500\nmyAccount('withdraw', 200); // Withdrawing 200\nmyAccount('checkBalance'); // Output: Balance: 1300",
+      },
+      {
+        heading: "Step-by-Step Explanation",
+        content: [
+          {
+            point: "Outer Function (createAccount)",
+            details:
+              "The outer function accepts an **initialBalance** argument and initializes a **balance** variable to store the account balance.",
+          },
+          {
+            point: "Inner Function",
+            details:
+              "The inner function takes two arguments: **action** (which can be **deposit**, **withdraw**, or **checkBalance**) and **amount**. Depending on the **action**, it performs the corresponding operation on the **balance**. The inner function has access to the **balance** variable because of the closure, which means it retains access to the outer function's variables even after the outer function finishes execution.",
+          },
+          {
+            point: "Action Handling",
+            details:
+              "The inner function handles three actions: \n- **deposit**: Increases the balance by the specified amount.\n- **withdraw**: Decreases the balance by the specified amount if there are sufficient funds; otherwise, it logs 'Insufficient funds'.\n- **checkBalance**: Logs the current balance to the console.",
+          },
+          {
+            point: "Reusability",
+            details:
+              "You can create multiple instances of bank accounts with their own isolated **balance**. Each account operates independently, allowing you to perform actions such as deposit, withdraw, and check balance for each one separately.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Currying Explained with a Coffee Example",
+    description:
+      "Discover the concept of currying in JavaScript through a coffee-making analogy. Learn its benefits and how to implement it effectively for cleaner, reusable functions in your projects.",
+    date: "January 1, 2025",
+    sections: [
+      {
+        heading: "What is Currying?",
+        content:
+          "Currying is a functional programming technique that transforms a function with multiple arguments into a sequence of nested functions, each taking a single argument. This makes functions more reusable and composable.",
+      },
+      {
+        heading: "Why Use Currying?",
+        content:
+          "Currying makes your code more modular and allows you to partially apply arguments. This is particularly useful when you frequently use a function with some arguments fixed.",
+      },
+      {
+        heading: "Curried Coffee Example: Line-by-Line Breakdown",
+        content:
+          "Let's create a function to build a coffee order step by step using currying.",
+        code: "function makeCoffee(type) {\n  return function (size) {\n    return function (extra) {\n      return `${size} ${type} with ${extra}`;\n    };\n  };\n}\n\n// Using the curried function\nconst coffeeOrder = makeCoffee('Latte')('Large')('Extra Foam');\nconsole.log(coffeeOrder); // Output: Large Latte with Extra Foam",
+      },
+      {
+        heading: "Adding a Predefined Function: makeLatteCoffee",
+        content:
+          "We can use currying to create specialized functions like **makeLatteCoffee**, which simplifies ordering Latte with default options.",
+        code: "const makeLatteCoffee = makeCoffee('Latte');\nconst latteOrder = makeLatteCoffee('Medium')('No Sugar');\nconsole.log(latteOrder); // Output: Medium Latte with No Sugar\n\n// One-liner version\nconst makeLatteCoffeeOneLiner = (size) => (extra) => `Medium Latte with ${extra}`;\nconst latteOrderOneLiner = makeLatteCoffeeOneLiner('Medium')('No Sugar');\nconsole.log(latteOrderOneLiner); // Output: Medium Latte with No Sugar",
+      },
+      {
+        heading: "Real-Life Use Case: Filtering in React",
+        content:
+          "Currying can be used in React applications to create reusable filter functions for data rendering. For example, let's create a filter for products based on category and price range.",
+        code: "function filterProductsByCategory(category) {\n  return function (minPrice) {\n    return function (maxPrice) {\n      return function (products) {\n        return products.filter(\n          (product) =>\n            product.category === category &&\n            product.price >= minPrice &&\n            product.price <= maxPrice\n        );\n      };\n    };\n  };\n}\n\n// Example usage in a React component\nconst products = [\n  { id: 1, name: 'Laptop', category: 'Electronics', price: 1000 },\n  { id: 2, name: 'Phone', category: 'Electronics', price: 700 },\n  { id: 3, name: 'Shirt', category: 'Clothing', price: 50 }\n];\n\nconst filterElectronics = filterProductsByCategory('Electronics')(500)(1500);\nconst filteredProducts = filterElectronics(products);\nconsole.log(filteredProducts);\n/* Output:\n[\n  { id: 1, name: 'Laptop', category: 'Electronics', price: 1000 },\n  { id: 2, name: 'Phone', category: 'Electronics', price: 700 }\n]*/\n\n// One-liner version\nconst filterProductsByCategoryOneLiner = (category) => (minPrice) => (maxPrice) => (products) => products.filter((product) => product.category === category && product.price >= minPrice && product.price <= maxPrice);\nconst filterElectronicsOneLiner = filterProductsByCategoryOneLiner('Electronics')(500)(1500);\nconst filteredProductsOneLiner = filterElectronicsOneLiner(products);\nconsole.log(filteredProductsOneLiner);",
+      },
+    ],
+  },
+  {
     id: 4,
+    title: "Debouncing vs Throttling: In-Depth Guide with Real-World Examples",
+    description:
+      "Understand the difference between debouncing and throttling in JavaScript. Learn when and how to use them to optimize performance in real-world applications.",
+    date: "June 9, 2025",
+    sections: [
+      {
+        heading: "Why Performance Optimization Matters",
+        content:
+          "In modern web applications, user interactions such as typing, resizing, and scrolling can trigger many events in a short period. Without optimization, this can degrade performance, causing laggy UI and unnecessary API calls. Debouncing and throttling are essential techniques to address this issue.",
+      },
+      {
+        heading: "What is Debouncing?",
+        content:
+          "Debouncing ensures that a function is executed only after a specified delay once the event stops firing. This is ideal for scenarios like search inputs or form validation where you want to wait until the user stops typing.",
+      },
+      {
+        heading: "Debounce Example: Search Input",
+        content:
+          "Let’s debounce an API call triggered by a search input to prevent making requests on every keystroke.",
+        code: `function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+// Example: Search input handler
+function handleSearch(query) {
+  console.log("API Call with:", query);
+}
+
+const debouncedSearch = debounce(handleSearch, 500);
+
+// In an input element
+<input type="text" onInput={(e) => debouncedSearch(e.target.value)} />`,
+      },
+      {
+        heading: "What is Throttling?",
+        content:
+          "Throttling ensures a function executes at most once every specified interval, regardless of how many times the event is triggered. It’s useful in events that fire continuously like scrolling or window resizing.",
+      },
+      {
+        heading: "Throttle Example: Scroll Listener",
+        content:
+          "Let’s throttle a scroll event to update position only once every 300ms, avoiding excessive function calls.",
+        code: `function throttle(func, limit) {
+  let inThrottle;
+  return function (...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+}
+
+// Example: Scroll handler
+function handleScroll() {
+  console.log("Scroll event at:", window.scrollY);
+}
+
+window.addEventListener("scroll", throttle(handleScroll, 300));`,
+      },
+      {
+        heading: "Debounce vs Throttle: Key Differences",
+        content:
+          "- **Debounce** waits for the user to *stop* triggering the event before executing.\n" +
+          "- **Throttle** runs the function at *regular intervals* regardless of continuous triggers.\n" +
+          "- Use **debounce** for: text input, autocomplete, form validation.\n" +
+          "- Use **throttle** for: scroll tracking, resize events, mouse movement.",
+      },
+      {
+        heading: "Real-Life Use Case: Button Click Prevention",
+        content:
+          "To prevent a button from being clicked rapidly (e.g., a 'Submit' button), throttling can help limit its action to once every few seconds.",
+        code: `const handleClick = throttle(() => {
+  console.log("Button clicked!");
+  // Prevent rapid submission
+}, 2000);
+
+// React JSX
+<button onClick={handleClick}>Submit</button>`,
+      },
+      {
+        heading: "Conclusion",
+        content:
+          "Debouncing and throttling are simple yet powerful techniques to enhance performance and user experience. Choose the right strategy based on whether you want to delay execution (debounce) or limit the rate (throttle).",
+      },
+    ],
+  },
+  {
+    id: 5,
     title: "Event Delegation in React with Todo List Example",
     description:
       "Learn Event Delegation in React with a practical Todo List example, enhancing performance by efficiently managing events on dynamically added list items using a single parent handler.",
@@ -238,7 +331,128 @@ const articles = [
     ],
   },
   {
-    id: 5,
+    id: 6,
+    title: "Understanding JavaScript's Event Loop and Call Stack Execution",
+    description:
+      "Uncover how JavaScript handles asynchronous code through the event loop and call stack. Learn how tasks like `setTimeout`, Promises, and UI rendering are managed to maintain a responsive web experience.",
+    date: "June 9, 2025",
+    sections: [
+      {
+        heading: "JavaScript is Single-Threaded",
+        content:
+          "JavaScript runs on a single thread, meaning only one piece of code executes at any given time. It uses an event loop to manage asynchronous tasks, allowing code like `setTimeout` and Promises to run without blocking the main thread.",
+      },
+      {
+        heading: "What is the Call Stack?",
+        content:
+          "The call stack is a LIFO (Last-In-First-Out) structure that keeps track of function calls. Whenever a function is invoked, it's added to the stack. When the function finishes, it's popped off the stack. If the stack is busy, new code waits until it's empty.",
+      },
+      {
+        heading: "Call Stack in Action",
+        content:
+          "Let’s look at a simple example of how functions are pushed and popped from the stack.",
+        code: `function greet() {
+  console.log("Hello");
+}
+
+function start() {
+  greet();
+  console.log("Welcome");
+}
+
+start();
+// Output:
+// Hello
+// Welcome`,
+      },
+      {
+        heading: "Introducing the Web APIs",
+        content:
+          "Functions like `setTimeout`, DOM events, or AJAX calls are handled by browser-provided Web APIs. These don't block the call stack. Instead, they are passed to the browser environment, and the callback is queued once completed.",
+      },
+      {
+        heading: "Understanding the Event Loop",
+        content:
+          "The event loop continuously checks if the call stack is empty. If it is, it looks at the task queue (also known as callback queue or message queue) and pushes the first message/callback onto the stack to execute.",
+      },
+      {
+        heading: "setTimeout Example: Asynchronous Callback",
+        content:
+          "`setTimeout` demonstrates how JavaScript defers execution via the event loop.",
+        code: `console.log("Start");
+
+setTimeout(() => {
+  console.log("Inside Timeout");
+}, 0);
+
+console.log("End");
+
+// Output:
+// Start
+// End
+// Inside Timeout`,
+      },
+      {
+        heading: "Microtask Queue vs Callback Queue",
+        content:
+          "JavaScript uses two queues:\n" +
+          "- **Callback Queue**: for `setTimeout`, `setInterval`, etc.\n" +
+          "- **Microtask Queue**: for Promises and `queueMicrotask`. Microtasks run *before* the callback queue is processed.\n\nThis is why Promises execute before `setTimeout` even if both are delayed by 0ms.",
+      },
+      {
+        heading: "Promises and Event Loop Priority",
+        content:
+          "Promises are handled in the microtask queue and run after the current stack is empty, but before any `setTimeout` callbacks.",
+        code: `console.log("Start");
+
+Promise.resolve().then(() => console.log("Promise Resolved"));
+
+setTimeout(() => console.log("Timeout"), 0);
+
+console.log("End");
+
+// Output:
+// Start
+// End
+// Promise Resolved
+// Timeout`,
+      },
+      {
+        heading: "Visualizing the Process",
+        code: `JavaScript Execution Flow
+│
+├──▶ Code Enters Call Stack
+│     └──▶ Executes Synchronous Code Line-by-Line
+│
+├──▶ Encounters Asynchronous Code (e.g., setTimeout, fetch, Promise)
+│     ├──▶ Web API handles async task
+│     │     ├──▶ Timer starts / HTTP request sent / Event listener waits
+│     │     └──▶ Upon completion, callback is queued
+│     │
+│     └──▶ Callback goes to:
+│           ├──▶ Microtask Queue (Promises, queueMicrotask)
+│           └──▶ Callback Queue (setTimeout, setInterval, etc.)
+│
+├──▶ Call Stack becomes Empty
+│
+├──▶ Event Loop Kicks In
+│     ├──▶ Checks Microtask Queue FIRST
+│     │     └──▶ Executes all microtasks until empty
+│     └──▶ Then checks Callback Queue
+│           └──▶ Executes one task, then repeats loop
+│
+└──▶ UI stays responsive while async work is scheduled smartly
+`,
+      },
+      {
+        heading: "Conclusion",
+        content:
+          "The event loop and call stack are at the core of how JavaScript executes code. Understanding their behavior ensures smoother handling of async operations, resulting in faster and more predictable applications.",
+      },
+    ],
+  },
+  {
+    id: 7,
     title: "Understanding call, apply, and bind in JavaScript",
     description:
       "Learn the key differences between call, apply, and bind in JavaScript, with practical examples to simplify method invocation and context binding in your projects.",
@@ -301,7 +515,7 @@ const articles = [
     ],
   },
   {
-    id: 6,
+    id: 8,
     title: "Hoisting in JavaScript",
     description:
       "Hoisting in JavaScript explains how variable and function declarations are moved to the top during compilation, affecting scope, var, let, const, and function behavior.",
