@@ -13,9 +13,9 @@ const ResourcesPage = () => {
 
   // Extract unique tags for multi-select
   const uniqueTags = useMemo(() => {
-    return Array.from(new Set(resources?.flatMap((item) => item?.tags))).map(
-      (tag) => ({ label: tag, value: tag })
-    );
+    return Array.from(new Set(resources?.flatMap((item) => item?.tags)))
+      ?.sort((a, b) => a.localeCompare(b))
+      ?.map((tag) => ({ label: tag, value: tag }));
   }, [resources]);
 
   // Get search parameters

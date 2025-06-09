@@ -1,17 +1,73 @@
 const Resources = [
   {
-    title: "HTML Handwritten Notes",
+    title: "React Core Concepts Notes",
     description:
-      "Simplified handwritten notes explaining the basics of HTML, including structure, tags, and attributes. Perfect for beginners to start building the foundation of web development.",
-    tags: ["HTML", "Frontend", "Web Development", "Handwritten Notes"],
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7269000115162415104/",
+      "Master the foundational concepts of React including components, JSX, state, props, lifecycle methods, hooks, and virtual DOM. This guide helps in building interactive and efficient UI applications.",
+    tags: ["React", "Frontend", "JavaScript", "Web Development"],
+    link: "https://github.com/shubhamsalunkhe16/react-notes",
   },
   {
-    title: "HTML Notes",
+    title: "React Hooks & Memo Notes",
     description:
-      "Master the basics of HTML with detailed explanations on tags, attributes, and page structure. Ideal for those starting their web development journey and looking to understand the core building blocks of web pages.",
-    tags: ["HTML", "Frontend", "Web Development"],
-    link: "https://github.com/shubhamsalunkhe16/html-notes",
+      "In-depth notes covering all essential React hooks including useState, useEffect, useContext, useRef, useMemo, useCallback, and useReducer with TypeScript examples. Also includes advanced usage of React.memo with areEqual and performance cases.",
+    tags: ["React", "Hooks", "React.memo", "JavaScript", "TypeScript"],
+    link: "https://github.com/shubhamsalunkhe16/react-hooks-memo-notes",
+  },
+  {
+    title: "Redux Toolkit & RTK Query Notes",
+    description:
+      "Master Redux, Redux Toolkit and RTK Query to manage complex global state and handle API requests efficiently in React apps. This guide covers slices, async thunks, caching, and auto-generated endpoints with practical examples.",
+    tags: ["Redux", "RTK", "RTK Query", "State Management", "React"],
+    link: "https://github.com/shubhamsalunkhe16/redux-rtk-rtk-query-notes",
+  },
+  {
+    title: "Performance Optimization in React, JS, and Assets",
+    description:
+      "Comprehensive guide to optimize performance in React apps and JavaScript codebases. Covers asset optimization, lazy loading, code splitting, memoization, web workers, and dynamic import strategies for components and bundles.",
+    tags: ["Performance", "React", "JavaScript", "Optimization", "Frontend"],
+    link: "https://github.com/shubhamsalunkhe16/react-js-performance-notes",
+  },
+  {
+    title: "Webpack, Babel & PostCSS Notes",
+    description:
+      "Learn how to configure and use Webpack for bundling, Babel for JavaScript transpilation, and PostCSS for advanced CSS transformations. This guide is perfect for developers looking to set up a modern and customizable front-end build system from scratch.",
+    tags: ["Webpack", "Babel", "PostCSS", "Frontend", "Tooling"],
+    link: "https://github.com/shubhamsalunkhe16/webpack-babel-postcss-notes",
+  },
+  {
+    title: "JavaScript Basics & jQuery Handwritten Notes",
+    description:
+      "Detailed handwritten notes on JavaScript fundamentals like variables, functions, and loops, along with jQuery essentials for DOM manipulation, animations. Ideal for mastering interactivity in web development.",
+    tags: [
+      "JavaScript",
+      "jQuery",
+      "Frontend",
+      "Web Development",
+      "Handwritten Notes",
+    ],
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7283151165062602752/",
+  },
+
+  {
+    title: "Basics & Advanced JavaScript Notes",
+    description:
+      "Dive into advanced JavaScript concepts such as closures, promises, async/await, and higher-order functions. These notes are designed for developers aiming to enhance their JavaScript skills and tackle complex programming challenges.",
+    tags: ["JavaScript", "Frontend", "Web Development"],
+    link: "https://github.com/shubhamsalunkhe16/js-notes",
+  },
+  {
+    title: "TypeScript Modules Notes",
+    description:
+      "TypeScript modules bring a structured way to organize code. Learn how to create, export, and import modules to build scalable applications with strong typing and improved maintainability.",
+    tags: ["TypeScript", "Frontend", "Web Development"],
+    link: "https://github.com/shubhamsalunkhe16/typescript-notes",
+  },
+  {
+    title: "jQuery Notes",
+    description:
+      "Explore an introduction to jQuery for DOM manipulation and creating interactive web elements. Perfect for beginners to get a strong foundation in web programming.",
+    tags: ["jQuery", "Frontend", "Web Development"],
+    link: "https://github.com/shubhamsalunkhe16/jQuery-notes",
   },
   {
     title: "CSS Handwritten Notes",
@@ -49,55 +105,18 @@ const Resources = [
     link: "https://github.com/shubhamsalunkhe16/tailwind-css-notes",
   },
   {
-    title: "JavaScript Basics & jQuery Handwritten Notes",
+    title: "HTML Handwritten Notes",
     description:
-      "Detailed handwritten notes on JavaScript fundamentals like variables, functions, and loops, along with jQuery essentials for DOM manipulation, animations. Ideal for mastering interactivity in web development.",
-    tags: [
-      "JavaScript",
-      "jQuery",
-      "Frontend",
-      "Web Development",
-      "Handwritten Notes",
-    ],
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7283151165062602752/",
-  },
-
-  {
-    title: "Basics & Advanced JavaScript Notes",
-    description:
-      "Dive into advanced JavaScript concepts such as closures, promises, async/await, and higher-order functions. These notes are designed for developers aiming to enhance their JavaScript skills and tackle complex programming challenges.",
-    tags: ["JavaScript", "Frontend", "Web Development"],
-    link: "https://github.com/shubhamsalunkhe16/js-notes",
+      "Simplified handwritten notes explaining the basics of HTML, including structure, tags, and attributes. Perfect for beginners to start building the foundation of web development.",
+    tags: ["HTML", "Frontend", "Web Development", "Handwritten Notes"],
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7269000115162415104/",
   },
   {
-    title: "jQuery Notes",
+    title: "HTML Notes",
     description:
-      "Explore an introduction to jQuery for DOM manipulation and creating interactive web elements. Perfect for beginners to get a strong foundation in web programming.",
-    tags: ["jQuery", "Frontend", "Web Development"],
-    link: "https://github.com/shubhamsalunkhe16/jQuery-notes",
-  },
-
-  {
-    title: "TypeScript Modules Notes",
-    description:
-      "TypeScript modules bring a structured way to organize code. Learn how to create, export, and import modules to build scalable applications with strong typing and improved maintainability.",
-    tags: ["TypeScript", "Frontend", "Web Development"],
-    link: "https://github.com/shubhamsalunkhe16/typescript-notes",
-  },
-
-  {
-    title: "Webpack, Babel & PostCSS Notes",
-    description:
-      "Learn how to configure and use Webpack for bundling, Babel for JavaScript transpilation, and PostCSS for advanced CSS transformations. This guide is perfect for developers looking to set up a modern and customizable front-end build system from scratch.",
-    tags: ["Webpack", "Babel", "PostCSS", "Frontend", "Tooling"],
-    link: "https://github.com/shubhamsalunkhe16/webpack-babel-postcss-notes",
-  },
-  {
-    title: "Redux Toolkit & RTK Query Notes",
-    description:
-      "Master Redux, Redux Toolkit and RTK Query to manage complex global state and handle API requests efficiently in React apps. This guide covers slices, async thunks, caching, and auto-generated endpoints with practical examples.",
-    tags: ["Redux", "RTK", "RTK Query", "State Management", "React"],
-    link: "https://github.com/shubhamsalunkhe16/redux-rtk-rtk-query-notes",
+      "Master the basics of HTML with detailed explanations on tags, attributes, and page structure. Ideal for those starting their web development journey and looking to understand the core building blocks of web pages.",
+    tags: ["HTML", "Frontend", "Web Development"],
+    link: "https://github.com/shubhamsalunkhe16/html-notes",
   },
 ];
 
