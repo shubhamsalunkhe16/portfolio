@@ -263,6 +263,121 @@ window.addEventListener("scroll", throttle(handleScroll, 300));`,
     ],
   },
   {
+    id: 9,
+    title: "Mastering Higher-Order Components (HOCs) in React",
+    description:
+      "Learn how Higher-Order Components (HOCs) in React allow you to reuse component logic. Explore real-world examples, use cases, and how to build your own HOC for common patterns like authentication or loading states.",
+    date: "June 10, 2025",
+    sections: [
+      {
+        heading: "What is a Higher-Order Component (HOC)?",
+        content:
+          "A Higher-Order Component is a function that takes a component and returns a new component with additional props, logic, or behavior. It’s a pattern used to abstract and reuse logic across multiple components in React.",
+      },
+      {
+        heading: "Why Use HOCs?",
+        content:
+          "HOCs help remove duplication by extracting common logic (like conditional rendering, fetching data, or handling permissions). Instead of repeating this logic in every component, you wrap them with an HOC.",
+      },
+      {
+        heading: "Basic Syntax of an HOC",
+        content:
+          "An HOC is just a pure function:\n\n`const EnhancedComponent = withSomething(OriginalComponent);`",
+      },
+      {
+        heading: "Example: withLoader HOC",
+        content:
+          "Let’s create a simple `withLoader` HOC that shows a loading spinner while data is being fetched.",
+        code: `// withLoader.js
+import React from 'react';
+
+const withLoader = (WrappedComponent) => {
+  return function WithLoaderComponent({ isLoading, ...props }) {
+    if (isLoading) {
+      return <p>Loading...</p>;
+    }
+    return <WrappedComponent {...props} />;
+  };
+};
+
+export default withLoader;`,
+      },
+      {
+        heading: "Using withLoader in a Real Component",
+        content:
+          "Now, let’s wrap a `UserList` component with `withLoader` to show a loading state.",
+        code: `// UserList.js
+import React, { useState, useEffect } from 'react';
+import withLoader from './withLoader';
+
+const UserList = ({ users }) => (
+  <ul>
+    {users.map((user) => (
+      <li key={user.id}>{user.name}</li>
+    ))}
+  </ul>
+);
+
+const EnhancedUserList = withLoader(UserList);
+
+const App = () => {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data);
+        setLoading(false);
+      });
+  }, []);
+
+  return <EnhancedUserList isLoading={loading} users={users} />;
+};
+
+export default App;`,
+      },
+      {
+        heading: "Real-World Use Case: withAuth HOC for Protected Routes",
+        content:
+          "HOCs are great for authentication too. Here’s an example of `withAuth` that redirects unauthenticated users.",
+        code: `// withAuth.js
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+
+const withAuth = (Component) => {
+  return function AuthComponent(props) {
+    const isAuthenticated = Boolean(localStorage.getItem('token'));
+    return isAuthenticated ? (
+      <Component {...props} />
+    ) : (
+      <Navigate to="/login" />
+    );
+  };
+};
+
+export default withAuth;
+
+// Usage
+const Dashboard = () => <h2>Private Dashboard</h2>;
+export default withAuth(Dashboard);`,
+      },
+      {
+        heading: "Caveats of HOCs",
+        content:
+          "- Avoid unnecessary nesting of HOCs (wrapper hell)\n" +
+          "- Always preserve component displayName for better debugging\n" +
+          "- Ensure props are passed down correctly to avoid breaking wrapped components",
+      },
+      {
+        heading: "Conclusion",
+        content:
+          "Higher-Order Components are a powerful tool for reusing logic in React. While hooks are now more common, HOCs still shine in areas like route protection, conditional UI, and feature toggles. Knowing how to create and use them will make your code more modular and scalable.",
+      },
+    ],
+  },
+  {
     id: 5,
     title: "Event Delegation in React with Todo List Example",
     description:

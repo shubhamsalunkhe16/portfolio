@@ -3,9 +3,9 @@ const userMeta = {
   summary:
     "Full Stack Developer with [experienceYears]+ years of experience building responsive, scalable and AI-driven web applications. Skilled in React, backend technologies, and performance optimization. Delivered solutions for top-tier brands. Passionate about clean code, collaboration, and continuous learning, transforming real world challenges into impactful digital products.",
   previewCVUrl:
-    "https://drive.google.com/file/d/1zoeHLHZVsqMYujH5T8SZyAjtTh08Es_j/view?usp=sharing",
+    "https://drive.google.com/file/d/1SV9WIFjVCbkjDXwwW2_CA99encH7Tqdy/view?usp=sharing",
   downloadCVUrl:
-    "https://drive.google.com/uc?export=download&id=1zoeHLHZVsqMYujH5T8SZyAjtTh08Es_j",
+    "https://drive.google.com/uc?export=download&id=1SV9WIFjVCbkjDXwwW2_CA99encH7Tqdy",
   journeyStartDate: "2021-09-13",
   myStory:
     "I’m Shubham Bhagwan Salunkhe, a dedicated **Full Stack Developer** with over **[experienceYears]+ years of experience** in **building innovative, scalable, responsive and user-centered web applications**. After graduating with a **Bachelor of Engineering in 2019**, I’ve honed my skills in **frontend technologies** and have good understanding of **backend architectures and database management**. At GoPhygital, I’ve contributed significantly to the development of AI-driven platforms for global brands like **Mastercard, Mercedes-Benz, Vodafone, Shell and many more**, with a focus on cutting-edge features like **text-to-speech** functionality, real-time **content creation tools**, **web streaming platform** and **social media analytics**. My passion for coding is matched by my commitment to team collaboration, having successfully **mentored colleagues** and **streamlined development processes**. Whether developing custom ECommerce solutions or creating dynamic, interactive user interfaces, I am always driven by the goal to build seamless, efficient, and impactful digital experiences. I believe in **continuous learning** and strive to **deliver high-quality solutions** that address real-world challenges.",
@@ -226,7 +226,7 @@ const userMeta = {
       title: "Backend",
       description:
         "Backend is the server-side part of a website or app, managing data, logic, and APIs.",
-      skills: ["Node.js", "Java", "Python"],
+      skills: ["Node.js", "Java"],
     },
     {
       title: "Databases",
