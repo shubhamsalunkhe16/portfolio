@@ -210,16 +210,14 @@ const userMeta = {
       description:
         "Frontend is the user-facing part of a website, built for design and interactivity.",
       skills: [
-        "HTML",
-        "CSS",
-        "Sass",
-        "Tailwind CSS",
-        "JavaScript",
-        "jQuery",
-        "TypeScript",
         "React",
         "Redux",
         "Next.js",
+        "JavaScript",
+        "Tailwind CSS",
+        "TypeScript",
+        "HTML",
+        "CSS",
       ],
     },
     {
